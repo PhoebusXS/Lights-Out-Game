@@ -1,0 +1,24 @@
+module board_updater (
+    input move,
+    input game[12],
+    input hint[12],
+    input mask[12][12],
+    output new_game[12],
+    output new_hint[12]
+) {
+
+    sig move_pos[12];
+
+    operators my_operators;
+    my_operators.alufn = 010110; // xor
+
+    my_operators.operand_one = mask[move];
+    my_operators.operand_two = game;
+    new_game = my_operators.ans;
+
+    move_pos = c{(move)x{0}, 1, (11-move)x{0}};
+    my_operators.operand_one = move_pos;
+    my_operators.operand_two = game;
+    new_hint = my_operators.ans;
+
+}

@@ -1,16 +1,21 @@
 module main (
     input clk,
     input rst,
-    input
-    output
+    input btn,
+    output score[][],
+    output board[][]
 ) {
 	 
     const INIT_GAME = 12b001001110100;
     const INIT_HINT = 12b011010111001;
 	sig mask[12][12] ;
     sig game[12];
-    sig button[12];
     sig hint[12];
+    sig move;
+    sig point;
+    sig step;
+
+    board_updater my_updater;
 
 	// masks
 	mask[0] = 12b110010000000;
@@ -23,8 +28,8 @@ module main (
 	mask[7] = 12b000100110001;
 	mask[8] = 12b000010001100;
 	mask[9] = 12b000001001110;
-	mask[10] = 12b000000100111;
-	mask[11] = 12b000000010011;
+	mask[10]= 12b000000100111;
+	mask[11]= 12b000000010011;
 
     .clk(clk) {
         .rst(rst) {
@@ -36,12 +41,22 @@ module main (
 
         case (state.q) {
             state.INIT:
-                // initialize board, hint and score
+                // initialize board, hint and step counter
+                game = INIT_GAME;
+                hint = INIT_HINT;
+                step = 0;
                 state.d = PLAY;
 
             state.PLAY:
                 // read move
-                // update board, hint and score
+                move = my_button.getmove;
+                // update board, hint and step
+                step++;
+                my_updater.move = move;
+                my_updater.game = game;
+                game = my_updater.new_game;
+                hint = my_updater.new_hint;
+                // see if game is solved
                 if (hint == 0) {
                     state.d = FIN;
                 }
