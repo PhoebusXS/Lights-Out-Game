@@ -1,13 +1,13 @@
-set projDir "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead"
+set projDir "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead"
 set projName "Lights-Out-Game"
 set topName top
 set device xc6slx9-2tqg144
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/verilog/mojo_top_0.v"]
+set verilogSources [list "F:/term5/50.002/1D/Lights-Out-Game/work/verilog/mojo_top_0.v" "F:/term5/50.002/1D/Lights-Out-Game/work/verilog/reset_conditioner_1.v"]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
-set ucfSources [list "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/constraint/btn.ucf" "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/constraint/mojo.ucf"]
+set ucfSources [list "F:/term5/50.002/1D/Lights-Out-Game/constraint/btn.ucf" "F:/term5/50.002/1D/Lights-Out-Game/constraint/mojo.ucf"]
 import_files -fileset [get_filesets constrs_1] -force -norecurse $ucfSources
 set_property -name {steps.bitgen.args.More Options} -value {-g Binary:Yes -g Compress} -objects [get_runs impl_1]
 set_property steps.map.args.mt on [get_runs impl_1]

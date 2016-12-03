@@ -21,8 +21,24 @@ module mojo_top_0 (
   
   reg rst;
   
+  reg [7:0] current_led;
+  
+  wire [1-1:0] M_reset_cond_out;
+  reg [1-1:0] M_reset_cond_in;
+  reset_conditioner_1 reset_cond (
+    .clk(clk),
+    .in(M_reset_cond_in),
+    .out(M_reset_cond_out)
+  );
   
   always @* begin
-    led[0+7-:8] = btn[0+7-:8];
+    M_reset_cond_in = ~rst_n;
+    rst = M_reset_cond_out;
+    current_led = current_led & btn;
+    led = current_led;
+    if (rst) begin
+      current_led = 8'hff;
+      led = current_led;
+    end
   end
 endmodule

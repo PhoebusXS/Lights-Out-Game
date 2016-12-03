@@ -12,13 +12,22 @@ module mojo_top (
   ) {
   
   sig rst;                  // reset signal
+  sig current_led[8];
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
   }
   
   always {
-    led[7:0] = btn[7:0];
+    reset_cond.in = ~rst_n;
+    rst = reset_cond.out;
+    current_led = current_led & btn;
+    led = current_led;
+    if (rst) {
+      current_led = 8b11111111;
+      led = current_led;
+    }
   }
 }
