@@ -1,0 +1,25 @@
+module comparer (
+        input z, // ?zero
+        input v, // ?overflow
+        input n, // ?negative
+        input alufn[6],
+        output ans[12]
+    ) {
+
+    sig cmp; // single bit result
+    
+    always {
+        case(alufn[2:0]) {
+            b011: // == CMPEQ
+                cmp = z;
+            b101: // < CMPLT
+                cmp = n ^ v;
+            b111: // <= CMPLE
+                cmp = z | n ^ v;
+            default:
+                cmp = b0;
+        }
+        ans = 0;
+        ans[0] = cmp;
+    }
+}

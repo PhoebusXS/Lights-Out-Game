@@ -1,0 +1,22 @@
+module shifter (
+        input a[12],
+        input b[12],
+        input alufn[6],
+        output ans[12]
+    ) {
+
+    always {
+        case (alufn[1:0]) {
+            b00: // SHL
+                ans = a << b;
+            b01: // SHR
+                ans = a >> b;
+            b10: // signedSHL
+                ans = $signed(a) <<< b;
+            b11: // signedSHR
+                ans = $signed(a) >>> b;
+            default:
+                ans = a;
+        }
+    }
+}

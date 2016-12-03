@@ -1,0 +1,28 @@
+module op_logic (
+        input alufn[6],
+        input a[12],
+        input b[12],
+        output ans[12]
+    ) {
+
+    always {
+        case (alufn[3:1]) {
+            b100: // A AND B
+                ans = a & b;
+            b111: // A OR B
+                ans = a | b;
+            b011: // A XOR B
+                ans = a ^ b;
+            b101: // A
+                ans = a;
+            b110: // NOT A
+                ans = ~a;
+            b001: // B
+                ans = b;
+            b010: // NOT B
+                ans = ~b;
+            default:
+                ans = 12b0;
+        }
+    }
+}

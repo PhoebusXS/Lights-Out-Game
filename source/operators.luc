@@ -1,0 +1,46 @@
+module operators (
+        input operand_one[12],
+        input operand_two[12],
+        input alufn[6],
+        output ans
+    ) {
+
+    op_adder my_adder;
+    op_comparer my_comparer;
+    op_logic my_logic;
+    op_shifter my_shifter;
+
+    always {
+
+        my_adder.a = operand_one;
+        my_adder.b = operand_two;
+        my_adder.alufn = alufn[5:0];
+        
+        my_logic_operator.a = operand_one;
+        my_logic_operator.b = operand_two;
+        my_logic_operator.alufn = alufn[5:0];
+        
+        my_shifter.a = operand_one;
+        my_shifter.b = operand_two;
+        my_shifter.alufn = alufn[5:0];
+        
+        my_comparer.z = my_adder.cmpz;
+        my_comparer.v = my_adder.cmpv;
+        my_comparer.n = my_adder.cmpn;
+        my_comparer.alufn = alufn[5:0];
+
+        case (alufn[5:4]) {
+            b00:
+                ans = my_adder.ans;
+            b01:
+                ans = my_logic_operator.ans;
+            b10:
+                ans = my_shifter.ans;
+            b11:
+                ans = my_comparer.ans;
+            default:
+                ans = 12b0;
+        }
+
+    }        
+}
