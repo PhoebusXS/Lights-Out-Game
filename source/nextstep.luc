@@ -1,0 +1,59 @@
+module main (
+    input clk,
+    input rst,
+    input
+    output
+) {
+	 
+    const INIT_GAME = 12b001001110100;
+    const INIT_HINT = 12b011010111001;
+	sig mask[12][12] ;
+    sig game[12];
+    sig button[12];
+    sig hint[12];
+
+	// masks
+	mask[0] = 12b110010000000;
+	mask[1] = 12b111001000000;
+	mask[2] = 12b011100100000;
+	mask[3] = 12b001100010000;
+	mask[4] = 12b100011001000;
+	mask[5] = 12b010011100100;
+	mask[6] = 12b001001110010;
+	mask[7] = 12b000100110001;
+	mask[8] = 12b000010001100;
+	mask[9] = 12b000001001110;
+	mask[10] = 12b000000100111;
+	mask[11] = 12b000000010011;
+
+    .clk(clk) {
+        .rst(rst) {
+            fsm state = {INIT, PLAY, FIN};
+        }
+    }
+
+    always {
+
+        case (state.q) {
+            state.INIT:
+                // initialize board, hint and score
+                state.d = PLAY;
+
+            state.PLAY:
+                // read move
+                // update board, hint and score
+                if (hint == 0) {
+                    state.d = FIN;
+                }
+
+            state.FIN:
+                // waiting for restart
+                // display congratulation msg
+                if (restartGame) {
+                    state.d = INIT;
+                }
+        }
+
+    }
+
+}
