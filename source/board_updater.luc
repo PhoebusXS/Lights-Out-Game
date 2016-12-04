@@ -8,17 +8,32 @@ module board_updater (
 ) {
 
     sig move_pos[12];
-
     operators my_operators;
-    my_operators.alufn = 010110; // xor
 
-    my_operators.operand_one = mask[move];
-    my_operators.operand_two = game;
-    new_game = my_operators.ans;
+    always {
+        my_operators.alufn = 010110; // xor
 
-    move_pos = c{(move)x{0}, 1, (11-move)x{0}};
-    my_operators.operand_one = move_pos;
-    my_operators.operand_two = game;
-    new_hint = my_operators.ans;
+        my_operators.operand_one = mask[move];
+        my_operators.operand_two = game;
+        new_game = my_operators.ans;
 
+        case (move) {
+            0: move_pos = 100000000000;
+            1: move_pos = 010000000000;
+            2: move_pos = 001000000000;
+            3: move_pos = 000100000000;
+            4: move_pos = 000010000000;
+            5: move_pos = 000001000000;
+            6: move_pos = 000000100000;
+            7: move_pos = 000000010000;
+            8: move_pos = 000000001000;
+            9: move_pos = 000000000100;
+            10: move_pos= 000000000010;
+            11: move_pos= 000000000001;
+            default:
+                move_pos= 000000000000;
+        }
+        my_operators.operand_two = hint;
+        new_hint = my_operators.ans;
+    }
 }

@@ -5,31 +5,16 @@ module main (
     output score[][],
     output board[][]
 ) {
-	 
+     
     const INIT_GAME = 12b001001110100;
     const INIT_HINT = 12b011010111001;
-	sig mask[12][12] ;
+    const MASK[12][12] = c{12b110010000000, 12b111001000000, 12b011100100000, 12b001100010000, 12b100011001000, 12b010011100100, 12b001001110010, 12b000100110001, 12b000010001100, 12b000001001110, 12b000000100111, 12b000000010011};
     sig game[12];
     sig hint[12];
     sig move;
-    sig point;
     sig step;
 
     board_updater my_updater;
-
-	// masks
-	mask[0] = 12b110010000000;
-	mask[1] = 12b111001000000;
-	mask[2] = 12b011100100000;
-	mask[3] = 12b001100010000;
-	mask[4] = 12b100011001000;
-	mask[5] = 12b010011100100;
-	mask[6] = 12b001001110010;
-	mask[7] = 12b000100110001;
-	mask[8] = 12b000010001100;
-	mask[9] = 12b000001001110;
-	mask[10]= 12b000000100111;
-	mask[11]= 12b000000010011;
 
     .clk(clk) {
         .rst(rst) {
@@ -39,33 +24,40 @@ module main (
 
     always {
 
+        game = game;
+        hint = hint;
+
         case (state.q) {
             state.INIT:
                 // initialize board, hint and step counter
                 game = INIT_GAME;
                 hint = INIT_HINT;
+                my_updater.mask = MASK;
+                my_updater.game = game;
+                my_updater.hint = hint;
                 step = 0;
-                state.d = PLAY;
+                state.d = state.PLAY;
 
             state.PLAY:
                 // read move
                 move = my_button.getmove;
                 // update board, hint and step
-                step++;
+                step = step + 1;
                 my_updater.move = move;
                 my_updater.game = game;
+                my_updater.hint = hint;
                 game = my_updater.new_game;
                 hint = my_updater.new_hint;
                 // see if game is solved
                 if (hint == 0) {
-                    state.d = FIN;
+                    state.d = state.FIN;
                 }
 
             state.FIN:
                 // waiting for restart
                 // display congratulation msg
                 if (restartGame) {
-                    state.d = INIT;
+                    state.d = state.INIT;
                 }
         }
 

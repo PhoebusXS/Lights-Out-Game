@@ -1,4 +1,4 @@
-module adder (
+module op_adder (
         input alufn[6],
         input a[12],
         input b[12],

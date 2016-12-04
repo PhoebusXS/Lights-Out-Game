@@ -2,7 +2,7 @@ module operators (
         input operand_one[12],
         input operand_two[12],
         input alufn[6],
-        output ans
+        output ans[12]
     ) {
 
     op_adder my_adder;
@@ -16,9 +16,9 @@ module operators (
         my_adder.b = operand_two;
         my_adder.alufn = alufn[5:0];
         
-        my_logic_operator.a = operand_one;
-        my_logic_operator.b = operand_two;
-        my_logic_operator.alufn = alufn[5:0];
+        my_logic.a = operand_one;
+        my_logic.b = operand_two;
+        my_logic.alufn = alufn[5:0];
         
         my_shifter.a = operand_one;
         my_shifter.b = operand_two;
@@ -33,7 +33,7 @@ module operators (
             b00:
                 ans = my_adder.ans;
             b01:
-                ans = my_logic_operator.ans;
+                ans = my_logic.ans;
             b10:
                 ans = my_shifter.ans;
             b11:

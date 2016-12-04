@@ -1,4 +1,4 @@
-module comparer (
+module op_comparer (
         input z, // ?zero
         input v, // ?overflow
         input n, // ?negative

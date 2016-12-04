@@ -1,4 +1,4 @@
-module shifter (
+module op_shifter (
         input a[12],
         input b[12],
         input alufn[6],
