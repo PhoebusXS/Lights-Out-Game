@@ -9,10 +9,10 @@ module main (
     const INIT_GAME = 12b001001110100;
     const INIT_HINT = 12b011010111001;
     const MASK[12][12] = c{12b110010000000, 12b111001000000, 12b011100100000, 12b001100010000, 12b100011001000, 12b010011100100, 12b001001110010, 12b000100110001, 12b000010001100, 12b000001001110, 12b000000100111, 12b000000010011};
-    sig game[12];
-    sig hint[12];
-    sig move;
-    sig step;
+    dff game[12](.clk(clk), .rst(rst));
+    dff hint[12](.clk(clk), .rst(rst));
+    dff move(.clk(clk), .rst(rst));
+    dff step(.clk(clk), .rst(rst));
 
     board_updater my_updater;
 
@@ -23,42 +23,48 @@ module main (
     }
 
     always {
-
-        game = game;
-        hint = hint;
+    
+        // stupid code, exclusively for retarded Mojo
+        my_updater.mask = MASK;
+        my_updater.hint = hint.q;
+        my_updater.move = 42;
+        my_updater.game = game.q;
 
         case (state.q) {
             state.INIT:
                 // initialize board, hint and step counter
-                game = INIT_GAME;
-                hint = INIT_HINT;
-                my_updater.mask = MASK;
-                my_updater.game = game;
-                my_updater.hint = hint;
-                step = 0;
+                game.d = INIT_GAME;
+                hint.d = INIT_HINT;
+                move.d = 42;
+                my_updater.hint = INIT_HINT;
+                my_updater.move = 42;
+                my_updater.game = INIT_GAME;
+                step.d = 0;
                 state.d = state.PLAY;
 
             state.PLAY:
                 // read move
-                move = my_button.getmove;
+                move.d = my_button.getmove;
                 // update board, hint and step
-                step = step + 1;
-                my_updater.move = move;
-                my_updater.game = game;
-                my_updater.hint = hint;
-                game = my_updater.new_game;
-                hint = my_updater.new_hint;
+                step.d = step.q + 1;
+                my_updater.hint = hint.q;
+                my_updater.move = move.q;
+                my_updater.game = game.q;
+                game.d = my_updater.new_game;
+                hint.d = my_updater.new_hint;
+                // TODO: display all the stuff
                 // see if game is solved
-                if (hint == 0) {
+                if (my_updater.new_hint == 0) {
                     state.d = state.FIN;
                 }
 
             state.FIN:
                 // waiting for restart
                 // display congratulation msg
-                if (restartGame) {
+                if (my_button.restartGame == 1) {
                     state.d = state.INIT;
                 }
+
         }
 
     }

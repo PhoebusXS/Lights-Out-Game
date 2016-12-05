@@ -7,8 +7,8 @@
     <src>op_logic.luc</src>
     <src>op_adder.luc</src>
     <src top="true">mojo_top.luc</src>
-    <src>nextstep.luc</src>
     <src>operators.luc</src>
+    <src>nextstep.luc</src>
     <ucf>btn.ucf</ucf>
     <ucf>mojo.ucf</ucf>
     <component>reset_conditioner.luc</component>
