@@ -1,8 +1,0 @@
-INTSTYLE=pa
-INFILE=F:\term5\50.002\1D\Lights-Out-Game\work\planAhead\Lights-Out-Game\Lights-Out-Game.runs\impl_1\mojo_top_0_routed.ncd
-OUTFILE=F:\term5\50.002\1D\Lights-Out-Game\work\planAhead\Lights-Out-Game\Lights-Out-Game.runs\impl_1\mojo_top_0.bit
-FAMILY=Spartan6
-PART=xc6slx9-2tqg144
-WORKINGDIR=F:\term5\50.002\1D\Lights-Out-Game\work\planAhead\Lights-Out-Game\Lights-Out-Game.runs\impl_1
-LICENSE=WebPack
-USER_INFO=211249980_0_0_330
