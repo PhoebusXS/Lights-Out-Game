@@ -1,0 +1,30 @@
+module led_matrix_controller (
+    input board[12],
+    input hint[12],
+    input step,
+    input ctr, // counter that counts from 0 to 11
+    output pina[12],
+    output pinb[12]
+) {
+    my_frame led_matrix_frame;
+    sig x;
+    sig y;
+    sig ind;
+
+    always {
+        // init an index from counter
+        ind = ctr.q;
+
+        // for board
+        if (board[ind] == 1) {
+            x = ind / 4 + 1;
+            y = ind mod 4 + 1; // TOFIX: mod operation
+        }
+
+        // TODO: for hint (where to put? on the right?)
+
+
+        // TODO: for step (put on the matrix too?)
+
+    }
+}
