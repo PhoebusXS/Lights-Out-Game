@@ -3,18 +3,16 @@ module led_matrix_controller (
     input game[3][4],
     input hint[3][4],
     input step,
-    input ctr, // counter that counts from 0 to 63
+    input ind[6],
+    input show_hint,
     output pina[12],
     output pinb[12]
 ) {
-    my_frame led_matrix_frame;
+    led_matrix_frame my_frame;
     sig x; // row number, 1 to 8
     sig y; // col number, 1 to 8
 
     always {
-        // init an index from counter
-        ind = ctr.q;
-
         // init row num and col num
         x = ind / 8 + 1;
         y = ind - (ind / 8) + 1; // fixed: mod
@@ -22,6 +20,7 @@ module led_matrix_controller (
         // default values
         my_frame.x = 0;
         my_frame.y = 0;
+        my_frame.yellow = 0;
         
         if (x <= 3) { // region of game|hint
             if (y <= 4) { // region of game
@@ -29,7 +28,7 @@ module led_matrix_controller (
                     my_frame.x = x;
                     my_frame.y = y;
                 }
-            } else { // region of hint
+            } else if (show_hint == 1) { // region of hint
                 if (hint[x][y - 4] == 1) {
                     my_frame.x = x;
                     my_frame.y = y;
