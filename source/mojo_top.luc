@@ -17,15 +17,18 @@ module main (
     dff step(.clk(clk), .rst(rst));
 
     board_updater my_updater;
+    my_led led_matrixcontroller;
 
     .clk(clk) {
         .rst(rst) {
             fsm state = {INIT, PLAY, FIN};
+            counter ctr (#SIZE(6),#TOP(63),#DIV(24));
         }
     }
 
+
     always {
-    
+
         // stupid code, exclusively for retarded Mojo
         my_updater.mask = MASK;
         my_updater.hint = hint.q;
@@ -54,7 +57,9 @@ module main (
                 my_updater.game = game.q;
                 game.d = my_updater.new_game;
                 hint.d = my_updater.new_hint;
-                // TODO: display all the stuff
+                my_led.
+
+
                 // see if game is solved
                 if (my_updater.new_hint == 0) {
                     state.d = state.FIN;
