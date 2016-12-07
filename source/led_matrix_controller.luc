@@ -17,7 +17,7 @@ module led_matrix_controller (
 
         // init row num and col num
         x = ind / 8 + 1;
-        y = ind mod 8 + 1; // TOFIX: mod operation
+        y = ind - (ind / 8) + 1; // fixed: mod
 
         // default values
         my_frame.x = 0;
