@@ -2,8 +2,10 @@ module main (
     input clk,
     input rst,
     input btn,
-    output score[][],
-    output board[][]
+    output pina[12], // for led matrix
+    output pinb[12], // for led matrix
+    output pinc[4], // for keypad
+    input pind[4] // for keypad
 ) {
      
     const INIT_GAME = 12b001001110100;
