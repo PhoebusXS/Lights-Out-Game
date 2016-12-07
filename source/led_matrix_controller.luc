@@ -1,6 +1,6 @@
 module led_matrix_controller (
 // I don't usually write comments but hope you enjoy, gilliam
-    input board[3][4],
+    input game[3][4],
     input hint[3][4],
     input step,
     input ctr, // counter that counts from 0 to 63
@@ -23,9 +23,9 @@ module led_matrix_controller (
         my_frame.x = 0;
         my_frame.y = 0;
         
-        if (x <= 3) { // region of board|hint
-            if (y <= 4) { // region of board
-                if (board[x][y] == 1) {
+        if (x <= 3) { // region of game|hint
+            if (y <= 4) { // region of game
+                if (game[x][y] == 1) {
                     my_frame.x = x;
                     my_frame.y = y;
                 }
