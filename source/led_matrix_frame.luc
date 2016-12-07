@@ -4,7 +4,7 @@ module led_matrix_frame (
     input y, // col number, [1,12]
     input yellow, // whether use yellow LED (default red)
     output pina[12],
-    output pinb[12],
+    output pinb[12]
 ) {
     always {
         pina = 12b110110110110;

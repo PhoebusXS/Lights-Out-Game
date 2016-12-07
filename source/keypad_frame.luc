@@ -11,8 +11,8 @@ module keypad_frame (
     sig colnum;
 
     always {
-        col = pin[0:3];
-        row = pin[4:7];
+        col = pin[3:0];
+        row = pin[7:4];
 
         case (row) {
             1000:
@@ -40,10 +40,10 @@ module keypad_frame (
         }
         x = rownum;
         y = colnum;
-        if (x == 0 || y == 0) {
+        if (rownum == 0 || colnum == 0) {
             keynum = 0;
         } else {
-            keynum = (x - 1) * 4 + (y - 1);
+            keynum = (rownum - 1) * 4 + (colnum - 1);
         }
     }
 }
