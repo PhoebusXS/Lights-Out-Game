@@ -1,0 +1,49 @@
+module keypad_frame (
+// translate from pin values to key number
+    input pin[8],
+    output x,
+    output y,
+    output keynum
+) {
+    sig col[4];
+    sig row[4];
+    sig rownum;
+    sig colnum;
+
+    always {
+        col = pin[0:3];
+        row = pin[4:7];
+
+        case (row) {
+            1000:
+                rownum = 1;
+            0100:
+                rownum = 2;
+            0010:
+                rownum = 3;
+            0001:
+                rownum = 4;
+            default:
+                rownum = 0;
+        }
+        case (col) {
+            1000:
+                colnum = 1;
+            0100:
+                colnum = 2;
+            0010:
+                colnum = 3;
+            0001:
+                colnum = 4;
+            default:
+                colnum = 0;
+        }
+        x = rownum;
+        y = colnum;
+        if (x == 0 || y == 0) {
+            keynum = 0;
+        } else {
+            keynum = (x - 1) * 4 + (y - 1);
+        }
+    }
+}
