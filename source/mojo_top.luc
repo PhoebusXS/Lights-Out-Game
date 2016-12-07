@@ -35,6 +35,12 @@ module main (
         my_updater.move = 42;
         my_updater.game = game.q;
 
+        // update my_led
+        my_led.game = game.q;
+        my_led.hint = hint.q;
+        my_led.step = step.q;
+        my_led.ind = ctr.value;
+
         case (state.q) {
             state.INIT:
                 // initialize board, hint and step counter
@@ -57,8 +63,10 @@ module main (
                 my_updater.game = game.q;
                 game.d = my_updater.new_game;
                 hint.d = my_updater.new_hint;
-                my_led.
 
+                // display all the stuff
+                pina = my_led.pina;
+                pinb = my_led.pinb;
 
                 // see if game is solved
                 if (my_updater.new_hint == 0) {
