@@ -1,47 +1,52 @@
-module main (
+module mojo_top (
     input clk,
-    input rst,
+    input rst_n, // reset button (active low)
     output pina[12], // for led matrix
     output pinb[12], // for led matrix
     input pinc[4], // for keypad, 4 pins on the left
     output pind[4] // for keypad, 4 pins on the right
 ) {
-     
+
     const INIT_GAME = 12b001001110100;
     const INIT_HINT = 12b011010111001;
     sig mask[12][12];
-    dff game[12](.clk(clk), .rst(rst));
-    dff hint[12](.clk(clk), .rst(rst));
-    dff move(.clk(clk), .rst(rst));
-    dff step(.clk(clk), .rst(rst));
+    sig rst;
 
     board_updater my_updater;
     led_matrix_controller my_led;
     keypad_controller my_keypad;
 
     .clk(clk) {
+        reset_conditioner reset_cond;
         .rst(rst) {
             fsm state = {INIT, PLAY, FIN};
             counter ctr (#SIZE(6),#TOP(63),#DIV(24));
             counter ktr (#SIZE(2), #TOP(3), #DIV(24));
+            dff game[12](.clk(clk), .rst(rst));
+            dff hint[12](.clk(clk), .rst(rst));
+            dff move(.clk(clk), .rst(rst));
+            dff step(.clk(clk), .rst(rst));
         }
     }
 
 
     always {
 
-    mask[0] = 12b110010000000;
-    mask[1] = 12b111001000000;
-    mask[2] = 12b011100100000;
-    mask[3] = 12b001100010000;
-    mask[4] = 12b100011001000;
-    mask[5] = 12b010011100100;
-    mask[6] = 12b001001110010;
-    mask[7] = 12b000100110001;
-    mask[8] = 12b000010001100;
-    mask[9] = 12b000001001110;
-    mask[10] = 12b000000100111;
-    mask[11] = 12b000000010011;
+        reset_cond.in = ~rst_n; // input raw inverted reset signal
+        rst = reset_cond.out;   // conditioned reset
+
+        mask[0] = 12b110010000000;
+        mask[1] = 12b111001000000;
+        mask[2] = 12b011100100000;
+        mask[3] = 12b001100010000;
+        mask[4] = 12b100011001000;
+        mask[5] = 12b010011100100;
+        mask[6] = 12b001001110010;
+        mask[7] = 12b000100110001;
+        mask[8] = 12b000010001100;
+        mask[9] = 12b000001001110;
+        mask[10] = 12b000000100111;
+        mask[11] = 12b000000010011;
 
         // stupid code, exclusively for retarded Mojo
         my_updater.mask = mask;
@@ -115,7 +120,8 @@ module main (
                 // TODO: display congratulation msg
         
         }
-    
+
+ 
     }
   
 }

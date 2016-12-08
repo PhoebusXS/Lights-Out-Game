@@ -4,9 +4,9 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module main_0 (
+module mojo_top_0 (
     input clk,
-    input rst,
+    input rst_n,
     output reg [11:0] pina,
     output reg [11:0] pinb,
     input [3:0] pinc,
@@ -21,13 +21,7 @@ module main_0 (
   
   reg [143:0] mask;
   
-  reg [11:0] M_game_d, M_game_q = 1'h0;
-  
-  reg [11:0] M_hint_d, M_hint_q = 1'h0;
-  
-  reg M_move_d, M_move_q = 1'h0;
-  
-  reg M_step_d, M_step_q = 1'h0;
+  reg rst;
   
   wire [12-1:0] M_my_updater_new_game;
   wire [12-1:0] M_my_updater_new_hint;
@@ -76,23 +70,34 @@ module main_0 (
     .show_hint(M_my_keypad_show_hint)
   );
   
+  wire [1-1:0] M_reset_cond_out;
+  reg [1-1:0] M_reset_cond_in;
+  reset_conditioner_4 reset_cond (
+    .clk(clk),
+    .in(M_reset_cond_in),
+    .out(M_reset_cond_out)
+  );
   localparam INIT_state = 2'd0;
   localparam PLAY_state = 2'd1;
   localparam FIN_state = 2'd2;
   
   reg [1:0] M_state_d, M_state_q = INIT_state;
   wire [6-1:0] M_ctr_value;
-  counter_4 ctr (
+  counter_5 ctr (
     .clk(clk),
     .rst(rst),
     .value(M_ctr_value)
   );
   wire [2-1:0] M_ktr_value;
-  counter_5 ktr (
+  counter_6 ktr (
     .clk(clk),
     .rst(rst),
     .value(M_ktr_value)
   );
+  reg [11:0] M_game_d, M_game_q = 1'h0;
+  reg [11:0] M_hint_d, M_hint_q = 1'h0;
+  reg M_move_d, M_move_q = 1'h0;
+  reg M_step_d, M_step_q = 1'h0;
   
   always @* begin
     M_state_d = M_state_q;
@@ -101,6 +106,8 @@ module main_0 (
     M_step_d = M_step_q;
     M_move_d = M_move_q;
     
+    M_reset_cond_in = ~rst_n;
+    rst = M_reset_cond_out;
     mask[0+11-:12] = 12'hc80;
     mask[12+11-:12] = 12'he40;
     mask[24+11-:12] = 12'h720;
@@ -170,18 +177,9 @@ module main_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_step_q <= 1'h0;
+      M_hint_q <= 1'h0;
     end else begin
-      M_step_q <= M_step_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
-    end else begin
-      M_state_q <= M_state_d;
+      M_hint_q <= M_hint_d;
     end
   end
   
@@ -197,18 +195,27 @@ module main_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_hint_q <= 1'h0;
+      M_move_q <= 1'h0;
     end else begin
-      M_hint_q <= M_hint_d;
+      M_move_q <= M_move_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_move_q <= 1'h0;
+      M_step_q <= 1'h0;
     end else begin
-      M_move_q <= M_move_d;
+      M_step_q <= M_step_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_state_q <= 1'h0;
+    end else begin
+      M_state_q <= M_state_d;
     end
   end
   

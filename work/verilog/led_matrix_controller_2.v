@@ -21,7 +21,7 @@ module led_matrix_controller_2 (
   reg [1-1:0] M_my_frame_x;
   reg [1-1:0] M_my_frame_y;
   reg [1-1:0] M_my_frame_yellow;
-  led_matrix_frame_7 my_frame (
+  led_matrix_frame_8 my_frame (
     .x(M_my_frame_x),
     .y(M_my_frame_y),
     .yellow(M_my_frame_yellow),

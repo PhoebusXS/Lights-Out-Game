@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "bitgen",
-         "\"main_0_routed.ncd\" \"main_0.bit\" \"main_0.pcf\" -g Binary:Yes -g Compress -w -intstyle pa" );
+         "\"mojo_top_0_routed.ncd\" \"mojo_top_0.bit\" \"mojo_top_0.pcf\" -g Binary:Yes -g Compress -w -intstyle pa" );
 
 
 

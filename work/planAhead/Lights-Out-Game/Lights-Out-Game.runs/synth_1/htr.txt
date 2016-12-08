@@ -6,4 +6,4 @@ REM          to be invoked for PlanAhead to track run status.
 REM Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
 REM
 
-xst -ifn "main_0.xst" -ofn "main_0.srp" -intstyle ise
+xst -ifn "mojo_top_0.xst" -ofn "mojo_top_0.srp" -intstyle ise

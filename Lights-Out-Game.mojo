@@ -13,6 +13,13 @@
     <src top="true">mojo_top.luc</src>
     <src>operators.luc</src>
     <ucf>mojo.ucf</ucf>
+    <component>reg_interface.luc</component>
+    <component>spi_slave.luc</component>
+    <component>uart_rx.luc</component>
+    <component>cclk_detector.luc</component>
+    <component>reset_conditioner.luc</component>
+    <component>uart_tx.luc</component>
+    <component>avr_interface.luc</component>
     <component>counter.luc</component>
   </files>
 </project>

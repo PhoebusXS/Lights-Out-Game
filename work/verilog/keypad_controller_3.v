@@ -19,7 +19,7 @@ module keypad_controller_3 (
   wire [1-1:0] M_my_frame_y;
   wire [1-1:0] M_my_frame_keynum;
   reg [8-1:0] M_my_frame_pin;
-  keypad_frame_8 my_frame (
+  keypad_frame_9 my_frame (
     .pin(M_my_frame_pin),
     .x(M_my_frame_x),
     .y(M_my_frame_y),

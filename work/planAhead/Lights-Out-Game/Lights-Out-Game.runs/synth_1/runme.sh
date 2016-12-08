@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep xst -ifn "main_0.xst" -ofn "main_0.srp" -intstyle ise
+EAStep xst -ifn "mojo_top_0.xst" -ofn "mojo_top_0.srp" -intstyle ise

@@ -1,0 +1,56 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Dec 08 14:03:58 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+COMP "pinb[5]" LOCATE = SITE "P82" LEVEL 1;
+COMP "pina[9]" LOCATE = SITE "P95" LEVEL 1;
+COMP "pinb[6]" LOCATE = SITE "P84" LEVEL 1;
+COMP "pinb[7]" LOCATE = SITE "P87" LEVEL 1;
+COMP "pind[0]" LOCATE = SITE "P114" LEVEL 1;
+COMP "pinb[8]" LOCATE = SITE "P92" LEVEL 1;
+COMP "pind[1]" LOCATE = SITE "P116" LEVEL 1;
+COMP "pinb[9]" LOCATE = SITE "P94" LEVEL 1;
+COMP "pind[2]" LOCATE = SITE "P118" LEVEL 1;
+COMP "pind[3]" LOCATE = SITE "P120" LEVEL 1;
+COMP "clk" LOCATE = SITE "P56" LEVEL 1;
+COMP "pinc(0)" LOCATE = SITE "P115" LEVEL 1;
+COMP "pinc(1)" LOCATE = SITE "P117" LEVEL 1;
+COMP "pinc(2)" LOCATE = SITE "P119" LEVEL 1;
+COMP "pinc(3)" LOCATE = SITE "P121" LEVEL 1;
+COMP "pina[10]" LOCATE = SITE "P98" LEVEL 1;
+COMP "pina[11]" LOCATE = SITE "P100" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "P38" LEVEL 1;
+COMP "pina[0]" LOCATE = SITE "P58" LEVEL 1;
+COMP "pina[1]" LOCATE = SITE "P67" LEVEL 1;
+COMP "pina[2]" LOCATE = SITE "P75" LEVEL 1;
+COMP "pinb[10]" LOCATE = SITE "P97" LEVEL 1;
+COMP "pina[3]" LOCATE = SITE "P79" LEVEL 1;
+COMP "pinb[11]" LOCATE = SITE "P99" LEVEL 1;
+COMP "pinb[0]" LOCATE = SITE "P57" LEVEL 1;
+COMP "pina[4]" LOCATE = SITE "P81" LEVEL 1;
+COMP "pinb[1]" LOCATE = SITE "P66" LEVEL 1;
+COMP "pina[5]" LOCATE = SITE "P83" LEVEL 1;
+COMP "pinb[2]" LOCATE = SITE "P74" LEVEL 1;
+COMP "pina[6]" LOCATE = SITE "P85" LEVEL 1;
+COMP "pinb[3]" LOCATE = SITE "P78" LEVEL 1;
+COMP "pina[7]" LOCATE = SITE "P88" LEVEL 1;
+COMP "pinb[4]" LOCATE = SITE "P80" LEVEL 1;
+COMP "pina[8]" LOCATE = SITE "P93" LEVEL 1;
+TIMEGRP clk = BEL "M_state_q_FSM_FFd1" BEL "M_hint_q_0" BEL "clk_BUFGP/BUFG"
+        BEL "ctr/M_ctr_q_0" BEL "ctr/M_ctr_q_1" BEL "ctr/M_ctr_q_2" BEL
+        "ctr/M_ctr_q_3" BEL "ctr/M_ctr_q_4" BEL "ctr/M_ctr_q_5" BEL
+        "ctr/M_ctr_q_6" BEL "ctr/M_ctr_q_7" BEL "ctr/M_ctr_q_8" BEL
+        "ctr/M_ctr_q_9" BEL "ctr/M_ctr_q_10" BEL "ctr/M_ctr_q_11" BEL
+        "ctr/M_ctr_q_12" BEL "ctr/M_ctr_q_13" BEL "ctr/M_ctr_q_14" BEL
+        "ctr/M_ctr_q_15" BEL "ctr/M_ctr_q_16" BEL "ctr/M_ctr_q_17" BEL
+        "ctr/M_ctr_q_18" BEL "ctr/M_ctr_q_19" BEL "ctr/M_ctr_q_20" BEL
+        "ctr/M_ctr_q_21" BEL "ctr/M_ctr_q_22" BEL "ctr/M_ctr_q_23" BEL
+        "ctr/M_ctr_q_24" BEL "ctr/M_ctr_q_25" BEL "ctr/M_ctr_q_26" BEL
+        "ctr/M_ctr_q_27" BEL "ctr/M_ctr_q_28" BEL "ctr/M_ctr_q_29" BEL
+        "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
+        "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0";
+TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

@@ -21,7 +21,7 @@ module board_updater_1 (
   reg [12-1:0] M_my_operators_operand_one;
   reg [12-1:0] M_my_operators_operand_two;
   reg [6-1:0] M_my_operators_alufn;
-  operators_6 my_operators (
+  operators_7 my_operators (
     .operand_one(M_my_operators_operand_one),
     .operand_two(M_my_operators_operand_two),
     .alufn(M_my_operators_alufn),
