@@ -2,7 +2,7 @@ module keypad_controller (
     input ind[2], // passed by a counter
     input pin[4], // 4 pins on the left to read from
     output pinr[4], // 4 pins on the right to write to    
-    output move, // the move made by player
+    output move[8], // the move made by player
     output restart_game, // whether to restart
     output show_hint // whether show hint
 ) {

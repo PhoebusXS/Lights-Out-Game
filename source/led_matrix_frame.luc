@@ -1,7 +1,7 @@
 module led_matrix_frame (
 // translate from led coordinate to pin values
-    input x, // row number, [1,12]
-    input y, // col number, [1,12]
+    input x[4], // row number, [1,12]
+    input y[4], // col number, [1,12]
     input yellow, // whether use yellow LED (default red)
     output pina[12],
     output pinb[12]

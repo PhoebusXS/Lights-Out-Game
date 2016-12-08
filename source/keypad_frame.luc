@@ -1,14 +1,14 @@
 module keypad_frame (
 // translate from pin values to key number
     input pin[8], // {in:row1to4, out:col1to4}
-    output x,
-    output y,
-    output keynum
+    output x[3],
+    output y[3],
+    output keynum[4]
 ) {
     sig col[4];
     sig row[4];
-    sig rownum;
-    sig colnum;
+    sig rownum[3];
+    sig colnum[3];
 
     always {
         col = pin[3:0];

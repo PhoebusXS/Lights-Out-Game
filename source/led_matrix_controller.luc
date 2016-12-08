@@ -2,7 +2,7 @@ module led_matrix_controller (
 // I don't usually write comments but hope you enjoy, gilliam
     input game[3][4],
     input hint[3][4],
-    input step,
+    input step[6],
     input ind[6],
     input show_hint,
     output pina[12],
