@@ -4,8 +4,8 @@
     <src>keypad_controller.luc</src>
     <src>led_matrix_frame.luc</src>
     <src>board_updater.luc</src>
-    <src>keypad_frame.luc</src>
     <src>op_comparer.luc</src>
+    <src>keypad_frame.luc</src>
     <src>op_shifter.luc</src>
     <src>op_logic.luc</src>
     <src>led_matrix_controller.luc</src>
