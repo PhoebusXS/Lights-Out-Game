@@ -76,7 +76,6 @@ module mojo_top (
         my_led.hint[0] = hint.q[3:0];
         my_led.step = step.q;
         my_led.ind = ctr.value;
-        my_led.show_hint = 1;
         my_led.smile = 0;    
     
         case (state.q) {
@@ -89,6 +88,7 @@ module mojo_top (
                 my_updater.move = 42;
                 my_updater.game = INIT_GAME;
                 step.d = 0;
+                my_led.show_hint = 0;
                 if (my_keypad.move == 3){
                     state.d = state.PLAY;
                 }
@@ -124,6 +124,14 @@ module mojo_top (
                 // see if we want to show smile
                 if (my_keypad.show_smile == 1) {
                     state.d = state.FIN;
+                }
+        
+                if (my_keypad.show_hint == 1) {
+                    if (my_led.showing_hint == 1) {
+                        my_led.show_hint = 0;
+                    } else {
+                        my_led.show_hint = 1;
+                    }
                 }
 
                 
