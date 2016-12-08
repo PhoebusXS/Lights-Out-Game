@@ -19,15 +19,15 @@ module keypad_controller (
         my_frame.pin[7:4] = pin[3:0];
         case (ind) {
             0:
-                pinout = 1000;
+                pinout = 4b1000;
             1:
-                pinout = 0100;
+                pinout = 4b0100;
             2:
-                pinout = 0010;
+                pinout = 4b0010;
             3:
-                pinout = 0001;
+                pinout = 4b0001;
             default:
-                pinout = 0000;
+                pinout = 4b0000;
         }
         pinr = pinout;
         my_frame.pin[3:0] = pinout;

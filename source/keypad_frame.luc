@@ -15,32 +15,32 @@ module keypad_frame (
         row = pin[7:4];
 
         case (row) {
-            1000:
+            4b1000:
                 rownum = 4;
-            0100:
+            4b0100:
                 rownum = 3;
-            0010:
+            4b0010:
                 rownum = 2;
-            0001:
+            4b0001:
                 rownum = 1;
             default:
                 rownum = 0;
         }
         case (col) {
-            1000:
+            4b1000:
                 colnum = 4;
-            0100:
+            4b0100:
                 colnum = 3;
-            0010:
+            4b0010:
                 colnum = 2;
-            0001:
+            4b0001:
                 colnum = 1;
             default:
                 colnum = 0;
         }
         x = rownum;
         y = colnum;
-        if (rownum == 0 || colnum == 0) {
+        if ((rownum == 0) || (colnum == 0)) {
             keynum = 0;
         } else {
             keynum = (rownum - 1) * 4 + (colnum - 1);
