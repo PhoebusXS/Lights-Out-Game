@@ -4,7 +4,9 @@ module mojo_top (
     output pina[12], // for led matrix
     output pinb[12], // for led matrix
     input pinc[4], // for keypad, 4 pins on the left
-    output pind[4] // for keypad, 4 pins on the right
+    output pind[4], // for keypad, 4 pins on the right
+    
+    output led[8]
 ) {
 
     const INIT_GAME = 12b001001110100;
@@ -20,33 +22,34 @@ module mojo_top (
         reset_conditioner reset_cond;
         .rst(rst) {
             fsm state = {INIT, PLAY, FIN};
-            counter ctr (#SIZE(6),#TOP(63),#DIV(24));
+            counter ctr (#SIZE(6),#TOP(63),#DIV(14));
             counter ktr (#SIZE(2), #TOP(3), #DIV(24));
             dff game[12](.clk(clk), .rst(rst));
             dff hint[12](.clk(clk), .rst(rst));
-            dff move(.clk(clk), .rst(rst));
-            dff step(.clk(clk), .rst(rst));
+            dff move[8](.clk(clk), .rst(rst));
+            dff step[6](.clk(clk), .rst(rst));
         }
     }
 
 
     always {
+        led = 8b00110000;
 
         reset_cond.in = ~rst_n; // input raw inverted reset signal
         rst = reset_cond.out;   // conditioned reset
 
-        mask[0] = 12b110010000000;
-        mask[1] = 12b111001000000;
-        mask[2] = 12b011100100000;
-        mask[3] = 12b001100010000;
-        mask[4] = 12b100011001000;
-        mask[5] = 12b010011100100;
-        mask[6] = 12b001001110010;
-        mask[7] = 12b000100110001;
-        mask[8] = 12b000010001100;
-        mask[9] = 12b000001001110;
-        mask[10] = 12b000000100111;
-        mask[11] = 12b000000010011;
+        mask[11] = 12b110010000000;
+        mask[10] = 12b111001000000;
+        mask[9] = 12b011100100000;
+        mask[8] = 12b001100010000;
+        mask[7] = 12b100011001000;
+        mask[6] = 12b010011100100;
+        mask[5] = 12b001001110010;
+        mask[4] = 12b000100110001;
+        mask[3] = 12b000010001100;
+        mask[2] = 12b000001001110;
+        mask[1] = 12b000000100111;
+        mask[0] = 12b000000010011;
 
         // stupid code, exclusively for retarded Mojo
         my_updater.mask = mask;
@@ -60,7 +63,9 @@ module mojo_top (
         // update my_keypad
         my_keypad.pin = pinc;
         my_keypad.ind = ktr.value;
+        pind = my_keypad.pinr;
 
+    
         // update my_led
         // DEBUG: indices
         my_led.game[2] = game.q[11:8];
@@ -71,11 +76,12 @@ module mojo_top (
         my_led.hint[0] = hint.q[3:0];
         my_led.step = step.q;
         my_led.ind = ctr.value;
-        my_led.show_hint = my_keypad.show_hint;
-
+        my_led.show_hint = 1;
+        my_led.smile = 0;    
+    
         case (state.q) {
             state.INIT:
-                // initialize board, hint and step counter
+                led = 8b10101010;
                 game.d = INIT_GAME;
                 hint.d = INIT_HINT;
                 move.d = 42;
@@ -83,20 +89,24 @@ module mojo_top (
                 my_updater.move = 42;
                 my_updater.game = INIT_GAME;
                 step.d = 0;
-                state.d = state.PLAY;
+                if (my_keypad.move == 3){
+                    state.d = state.PLAY;
+                }
 
-            state.PLAY:
-                // read move
-                move.d = my_keypad.move;
-
-                // update board, hint and step
-                step.d = step.q + 1;
-                my_updater.hint = hint.q;
-                my_updater.move = move.q;
-                my_updater.game = game.q;
-                game.d = my_updater.new_game;
-                hint.d = my_updater.new_hint;
-
+      
+             state.PLAY:
+                led = my_keypad.move;
+                if (my_keypad.move != 42){
+                   // game.d = game.q ^ mask[0];
+                    //hint.d = hint.q ^ 12b000000000001;
+                    step.d = 11;
+                    my_updater.hint = hint.q;
+                    my_updater.move = my_keypad.move;
+                    my_updater.game = game.q;
+                    game.d = my_updater.new_game;
+                    hint.d = my_updater.new_hint;
+                }
+                
                 // display all the stuff
                 pina = my_led.pina;
                 pinb = my_led.pinb;
@@ -110,18 +120,29 @@ module mojo_top (
                 if (my_keypad.restart_game == 1) {
                     state.d = state.INIT;
                 }
-
-            state.FIN:
-                // waiting for restart
-                if (my_keypad.move != 42) {
-                    state.d = state.INIT;
+        
+                // see if we want to show smile
+                if (my_keypad.show_smile == 1) {
+                    state.d = state.FIN;
                 }
 
-                // TODO: display congratulation msg
+                
+        state.FIN:
+                led = my_keypad.move;
+                // waiting for restart
         
-        }
+                my_led.smile = 1 ;
+                if (my_keypad.restart_game == 1) {
+                   state.d = state.INIT;
+                }
+        
+      }
+
+        pina = my_led.pina;
+        pinb = my_led.pinb;
+        
+        //led = c{my_led.xx, my_led.yy};
+    }
 
  
     }
-  
-}

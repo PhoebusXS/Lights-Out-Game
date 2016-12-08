@@ -1,5 +1,5 @@
 module board_updater (
-    input move,
+    input move[8],
     input game[12],
     input hint[12],
     input mask[12][12],
@@ -8,32 +8,29 @@ module board_updater (
 ) {
 
     sig move_pos[12];
-    operators my_operators;
 
     always {
-        my_operators.alufn = 010110; // xor
-
-        my_operators.operand_one = mask[move];
-        my_operators.operand_two = game;
-        new_game = my_operators.ans;
-
-        case (move) {
-            0: move_pos = 100000000000;
-            1: move_pos = 010000000000;
-            2: move_pos = 001000000000;
-            3: move_pos = 000100000000;
-            4: move_pos = 000010000000;
-            5: move_pos = 000001000000;
-            6: move_pos = 000000100000;
-            7: move_pos = 000000010000;
-            8: move_pos = 000000001000;
-            9: move_pos = 000000000100;
-            10: move_pos= 000000000010;
-            11: move_pos= 000000000001;
-            default:
-                move_pos= 000000000000;
+        if (move != 42){
+            new_game = game ^ mask[move];
+        } else{
+            new_game = game;
         }
-        my_operators.operand_two = hint;
-        new_hint = my_operators.ans;
+        case (move) {
+            0: move_pos = 12b100000000000;
+            1: move_pos = 12b010000000000;
+            2: move_pos = 12b001000000000;
+            3: move_pos = 12b000100000000;
+            4: move_pos = 12b000010000000;
+            5: move_pos = 12b000001000000;
+            6: move_pos = 12b000000100000;
+            7: move_pos = 12b000000010000;
+            8: move_pos = 12b000000001000;
+            9: move_pos = 12b000000000100;
+            10: move_pos= 12b000000000010;
+            11: move_pos= 12b000000000001;
+            default:
+                move_pos= 12b000000000000;
+        }
+        new_hint = hint ^ move_pos;
     }
 }

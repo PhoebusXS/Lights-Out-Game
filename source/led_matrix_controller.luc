@@ -5,23 +5,40 @@ module led_matrix_controller (
     input step[6],
     input ind[6],
     input show_hint,
+    input smile,
     output pina[12],
     output pinb[12]
 ) {
     led_matrix_frame my_frame;
     sig x[4]; // row number, 1 to 8
     sig y[4]; // col number, 1 to 8
+  
+    sig smileface[8][8];
+  
 
     always {
+  
         // init row num and col num
         x = ind / 8 + 1;
         y = ind - (ind / 8) * 8 + 1; // fixed: mod
+    
+          smileface[7] = 8b00100100;
+  smileface[6] = 8b00100100;
+  smileface[5] = 8b00100100;
+  smileface[4] = 8b00000000;
+  smileface[3] = 8b10000001;
+  smileface[2] = 8b01000010;
+  smileface[1] = 8b00111100;
+  smileface[0] = 8b00000000;
 
+
+    
         // default values
         my_frame.x = 0;
         my_frame.y = 0;
         my_frame.yellow = 0;
-        
+    
+    if (smile == 0) {    
         if (x <= 3) { // region of game|hint
             if (y <= 4) { // region of game
                 if (game[x - 1][y - 1] == 1) {
@@ -39,10 +56,26 @@ module led_matrix_controller (
             if (ind + step >= 64) {
                     my_frame.x = x;
                     my_frame.y = y;
-            }
-        }
+                }
+             }
 
-        pina = my_frame.pina;
-        pinb = my_frame.pinb;
+    } else {
+        if (smileface[x-1][y-1] == 1){
+            my_frame.x = x;
+            my_frame.y = y;
+            my_frame.yellow = 0;
+        }
+    }
+    pina = my_frame.pina;
+    pinb = my_frame.pinb;
     }
 }
+
+	//	0 0 1 0 0 1 0 0
+	//	0 0 1 0 0 1 0 0
+	//  0 0 1 0 0 1 0 0
+	//  0 0 0 0 0 0 0 0
+	//	1 0 0 0 0 0 0 1
+	//  0 1 0 0 0 0 1 0
+	//  0 0 1 1 1 1 0 0     
+	//  0 0 0 0 0 0 0 0

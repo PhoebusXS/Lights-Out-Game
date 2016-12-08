@@ -30,13 +30,13 @@ module operators (
         my_comparer.alufn = alufn[5:0];
 
         case (alufn[5:4]) {
-            b00:
+            2b00:
                 ans = my_adder.ans;
-            b01:
+            2b01:
                 ans = my_logic.ans;
-            b10:
+            2b10:
                 ans = my_shifter.ans;
-            b11:
+            2b11:
                 ans = my_comparer.ans;
             default:
                 ans = 12b0;
