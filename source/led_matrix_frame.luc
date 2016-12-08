@@ -7,8 +7,8 @@ module led_matrix_frame (
     output pinb[12]
 ) {
     always {
-        pina = 12b110110110110;
-        pinb = 12b011011011011;
+        pina = 12b011011011101;
+        pinb = 12b110110110110;
 
         if (x == 0) { // just pass
         } else if (x - (x / 2) * 2 == 1) {
