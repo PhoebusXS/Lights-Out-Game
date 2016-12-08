@@ -16,25 +16,25 @@ module keypad_frame (
 
         case (row) {
             1000:
-                rownum = 1;
-            0100:
-                rownum = 2;
-            0010:
-                rownum = 3;
-            0001:
                 rownum = 4;
+            0100:
+                rownum = 3;
+            0010:
+                rownum = 2;
+            0001:
+                rownum = 1;
             default:
                 rownum = 0;
         }
         case (col) {
             1000:
-                colnum = 1;
-            0100:
-                colnum = 2;
-            0010:
-                colnum = 3;
-            0001:
                 colnum = 4;
+            0100:
+                colnum = 3;
+            0010:
+                colnum = 2;
+            0001:
+                colnum = 1;
             default:
                 colnum = 0;
         }
