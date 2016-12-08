@@ -63,12 +63,12 @@ module mojo_top (
 
         // update my_led
         // DEBUG: indices
-        my_led.game[0] = game.q[11:8];
+        my_led.game[2] = game.q[11:8];
         my_led.game[1] = game.q[7:4];
-        my_led.game[2] = game.q[3:0];
-        my_led.hint[0] = hint.q[11:8];
+        my_led.game[0] = game.q[3:0];
+        my_led.hint[2] = hint.q[11:8];
         my_led.hint[1] = hint.q[7:4];
-        my_led.hint[2] = hint.q[3:0];
+        my_led.hint[0] = hint.q[3:0];
         my_led.step = step.q;
         my_led.ind = ctr.value;
         my_led.show_hint = my_keypad.show_hint;

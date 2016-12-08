@@ -9,13 +9,13 @@ module led_matrix_controller (
     output pinb[12]
 ) {
     led_matrix_frame my_frame;
-    sig x; // row number, 1 to 8
-    sig y; // col number, 1 to 8
+    sig x[4]; // row number, 1 to 8
+    sig y[4]; // col number, 1 to 8
 
     always {
         // init row num and col num
         x = ind / 8 + 1;
-        y = ind - (ind / 8) + 1; // fixed: mod
+        y = ind - (ind / 8) * 8 + 1; // fixed: mod
 
         // default values
         my_frame.x = 0;
@@ -24,14 +24,15 @@ module led_matrix_controller (
         
         if (x <= 3) { // region of game|hint
             if (y <= 4) { // region of game
-                if (game[x][y] == 1) {
+                if (game[x - 1][y - 1] == 1) {
                     my_frame.x = x;
                     my_frame.y = y;
                 }
             } else if (show_hint == 1) { // region of hint
-                if (hint[x][y - 4] == 1) {
+                if (hint[x - 1][y - 5] == 1) {
                     my_frame.x = x;
                     my_frame.y = y;
+                    my_frame.yellow = 1;
                 }
             }
         } else { // region of step count
