@@ -4,9 +4,9 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module led_matrix_frame_8 (
-    input x,
-    input y,
+module led_matrix_frame_15 (
+    input [3:0] x,
+    input [3:0] y,
     input yellow,
     output reg [11:0] pina,
     output reg [11:0] pinb
@@ -15,8 +15,8 @@ module led_matrix_frame_8 (
   
   
   always @* begin
-    pina = 12'hdb6;
-    pinb = 12'h6db;
+    pina = 12'h6db;
+    pinb = 12'hdb6;
     if (x == 1'h0) begin
       
     end else begin

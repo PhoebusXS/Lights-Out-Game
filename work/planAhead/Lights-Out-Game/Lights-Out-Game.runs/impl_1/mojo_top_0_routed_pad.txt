@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Dec 08 14:04:02 2016
+Sat Dec 10 02:58:53 2016
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -134,13 +134,13 @@ Pinout by Pin Number:
 |P112      |           |IOBM     |IO_L66P_SCP1_0            |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |P113      |           |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |P114      |pind[0]    |IOB      |IO_L65N_SCP2_0            |OUTPUT   |LVTTL      |0             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P115      |pinc(0)    |IOB      |IO_L65P_SCP3_0            |INPUT    |LVTTL      |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|P115      |pinc[0]    |IOB      |IO_L65P_SCP3_0            |INPUT    |LVTTL      |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P116      |pind[1]    |IOB      |IO_L64N_SCP4_0            |OUTPUT   |LVTTL      |0             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P117      |pinc(1)    |IOB      |IO_L64P_SCP5_0            |INPUT    |LVTTL      |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|P117      |pinc[1]    |IOB      |IO_L64P_SCP5_0            |INPUT    |LVTTL      |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P118      |pind[2]    |IOB      |IO_L63N_SCP6_0            |OUTPUT   |LVTTL      |0             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P119      |pinc(2)    |IOB      |IO_L63P_SCP7_0            |INPUT    |LVTTL      |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|P119      |pinc[2]    |IOB      |IO_L63P_SCP7_0            |INPUT    |LVTTL      |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P120      |pind[3]    |IOB      |IO_L62N_VREF_0            |OUTPUT   |LVTTL      |0             |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
-|P121      |pinc(3)    |IOB      |IO_L62P_0                 |INPUT    |LVTTL      |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|P121      |pinc[3]    |IOB      |IO_L62P_0                 |INPUT    |LVTTL      |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |P122      |           |         |VCCO_0                    |         |           |0             |          |         |           |         |3.30     |          |           |                |
 |P123      |           |IOBS     |IO_L37N_GCLK12_0          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |P124      |           |IOBM     |IO_L37P_GCLK13_0          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |

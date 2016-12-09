@@ -7,9 +7,11 @@
 module led_matrix_controller_2 (
     input [11:0] game,
     input [11:0] hint,
-    input step,
+    input [5:0] step,
     input [5:0] ind,
     input show_hint,
+    input smile,
+    input sad,
     output reg [11:0] pina,
     output reg [11:0] pinb
   );
@@ -18,10 +20,10 @@ module led_matrix_controller_2 (
   
   wire [12-1:0] M_my_frame_pina;
   wire [12-1:0] M_my_frame_pinb;
-  reg [1-1:0] M_my_frame_x;
-  reg [1-1:0] M_my_frame_y;
+  reg [4-1:0] M_my_frame_x;
+  reg [4-1:0] M_my_frame_y;
   reg [1-1:0] M_my_frame_yellow;
-  led_matrix_frame_8 my_frame (
+  led_matrix_frame_15 my_frame (
     .x(M_my_frame_x),
     .y(M_my_frame_y),
     .yellow(M_my_frame_yellow),
@@ -29,34 +31,71 @@ module led_matrix_controller_2 (
     .pinb(M_my_frame_pinb)
   );
   
-  reg x;
+  reg [3:0] x;
   
-  reg y;
+  reg [3:0] y;
+  
+  reg [63:0] smileface;
+  
+  reg [63:0] sadface;
   
   always @* begin
     x = ind / 4'h8 + 1'h1;
-    y = ind - (ind / 4'h8) + 1'h1;
+    y = ind - (ind / 4'h8) * 4'h8 + 1'h1;
+    smileface[56+7-:8] = 8'h24;
+    smileface[48+7-:8] = 8'h24;
+    smileface[40+7-:8] = 8'h24;
+    smileface[32+7-:8] = 8'h00;
+    smileface[24+7-:8] = 8'h81;
+    smileface[16+7-:8] = 8'h42;
+    smileface[8+7-:8] = 8'h3c;
+    smileface[0+7-:8] = 8'h00;
+    sadface[56+7-:8] = 8'h24;
+    sadface[48+7-:8] = 8'h24;
+    sadface[40+7-:8] = 8'h24;
+    sadface[32+7-:8] = 8'h00;
+    sadface[24+7-:8] = 8'h3c;
+    sadface[16+7-:8] = 8'h42;
+    sadface[8+7-:8] = 8'h81;
+    sadface[0+7-:8] = 8'h00;
     M_my_frame_x = 1'h0;
     M_my_frame_y = 1'h0;
     M_my_frame_yellow = 1'h0;
-    if (x <= 2'h3) begin
-      if (y <= 3'h4) begin
-        if (game[(x)*4+(y)*1+0-:1] == 1'h1) begin
+    if (smile == 1'h1) begin
+      if (smileface[(x - 1'h1)*8+(y - 1'h1)*1+0-:1] == 1'h1) begin
+        M_my_frame_x = x;
+        M_my_frame_y = y;
+        M_my_frame_yellow = 1'h1;
+      end
+    end else begin
+      if (sad == 1'h1) begin
+        if (sadface[(x - 1'h1)*8+(y - 1'h1)*1+0-:1] == 1'h1) begin
           M_my_frame_x = x;
           M_my_frame_y = y;
+          M_my_frame_yellow = 1'h0;
         end
       end else begin
-        if (show_hint == 1'h1) begin
-          if (hint[(x)*4+(y - 3'h4)*1+0-:1] == 1'h1) begin
+        if (x <= 2'h3) begin
+          if (y <= 3'h4) begin
+            if (game[(x - 1'h1)*4+(y - 1'h1)*1+0-:1] == 1'h1) begin
+              M_my_frame_x = x;
+              M_my_frame_y = y;
+            end
+          end else begin
+            if (show_hint == 1'h1) begin
+              if (hint[(x - 1'h1)*4+(y - 3'h5)*1+0-:1] == 1'h1) begin
+                M_my_frame_x = x;
+                M_my_frame_y = y;
+                M_my_frame_yellow = 1'h1;
+              end
+            end
+          end
+        end else begin
+          if (ind + step >= 7'h40) begin
             M_my_frame_x = x;
             M_my_frame_y = y;
           end
         end
-      end
-    end else begin
-      if (ind + step >= 7'h40) begin
-        M_my_frame_x = x;
-        M_my_frame_y = y;
       end
     end
     pina = M_my_frame_pina;

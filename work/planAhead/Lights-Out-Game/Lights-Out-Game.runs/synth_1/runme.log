@@ -7,33 +7,29 @@ Reading design: mojo_top_0.prj
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/op_shifter_13.v" into library work
-Parsing module <op_shifter_13>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/op_logic_12.v" into library work
-Parsing module <op_logic_12>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/op_comparer_11.v" into library work
-Parsing module <op_comparer_11>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/op_adder_10.v" into library work
-Parsing module <op_adder_10>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v" into library work
-Parsing module <operators_7>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_frame_8.v" into library work
-Parsing module <led_matrix_frame_8>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" into library work
-Parsing module <keypad_frame_9>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/reset_conditioner_4.v" into library work
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/pipeline_17.v" into library work
+Parsing module <pipeline_17>.
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_frame_15.v" into library work
+Parsing module <led_matrix_frame_15>.
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_16.v" into library work
+Parsing module <keypad_frame_16>.
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/reset_conditioner_4.v" into library work
 Parsing module <reset_conditioner_4>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_controller_2.v" into library work
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_controller_2.v" into library work
 Parsing module <led_matrix_controller_2>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" into library work
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" into library work
 Parsing module <keypad_controller_3>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/counter_6.v" into library work
-Parsing module <counter_6>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/counter_5.v" into library work
-Parsing module <counter_5>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" into library work
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/edge_detector_5.v" into library work
+Parsing module <edge_detector_5>.
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/counter_14.v" into library work
+Parsing module <counter_14>.
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/counter_13.v" into library work
+Parsing module <counter_13>.
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/button_conditioner_9.v" into library work
+Parsing module <button_conditioner_9>.
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" into library work
 Parsing module <board_updater_1>.
-Analyzing Verilog file "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Analyzing Verilog file "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
 =========================================================================
@@ -44,85 +40,53 @@ Elaborating module <mojo_top_0>.
 
 Elaborating module <board_updater_1>.
 
-Elaborating module <operators_7>.
-
-Elaborating module <op_adder_10>.
-WARNING:HDLCompiler:1127 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v" Line 31: Assignment to M_my_adder_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v" Line 32: Assignment to M_my_adder_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v" Line 33: Assignment to M_my_adder_n ignored, since the identifier is never used
-
-Elaborating module <op_comparer_11>.
-
-Elaborating module <op_logic_12>.
-
-Elaborating module <op_shifter_13>.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 32: Result of 14-bit expression is truncated to fit in 6-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 39: Result of 37-bit expression is truncated to fit in 12-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 42: Result of 34-bit expression is truncated to fit in 12-bit target.
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 44: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 47: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 50: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 53: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 56: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 59: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 62: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 65: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 68: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 71: case condition never applies
-WARNING:HDLCompiler:1127 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v" Line 31: Assignment to move_pos ignored, since the identifier is never used
-
 Elaborating module <led_matrix_controller_2>.
 
-Elaborating module <led_matrix_frame_8>.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_controller_2.v" Line 37: Result of 4-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_controller_2.v" Line 38: Result of 6-bit expression is truncated to fit in 1-bit target.
+Elaborating module <led_matrix_frame_15>.
+WARNING:HDLCompiler:413 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_controller_2.v" Line 44: Result of 6-bit expression is truncated to fit in 4-bit target.
 
 Elaborating module <keypad_controller_3>.
 
-Elaborating module <keypad_frame_9>.
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" Line 29: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" Line 32: case condition never applies
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" Line 36: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" Line 39: Result of 3-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" Line 47: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" Line 50: case condition never applies
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" Line 54: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" Line 57: Result of 3-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v" Line 68: Result of 3-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:1127 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" Line 24: Assignment to M_my_frame_x ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" Line 25: Assignment to M_my_frame_y ignored, since the identifier is never used
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" Line 32: Result of 6-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" Line 39: Result of 10-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" Line 42: Result of 7-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:1127 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 67: Assignment to M_my_keypad_pinr ignored, since the identifier is never used
+Elaborating module <keypad_frame_16>.
+WARNING:HDLCompiler:1127 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" Line 25: Assignment to M_my_frame_x ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" Line 26: Assignment to M_my_frame_y ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 76: Assignment to M_my_keypad_show_smile ignored, since the identifier is never used
 
 Elaborating module <reset_conditioner_4>.
 
-Elaborating module <counter_5>.
+Elaborating module <edge_detector_5>.
 
-Elaborating module <counter_6>.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 125: Result of 6-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 146: Result of 6-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 148: Result of 6-bit expression is truncated to fit in 1-bit target.
+Elaborating module <button_conditioner_9>.
+
+Elaborating module <pipeline_17>.
+
+Elaborating module <counter_13>.
+
+Elaborating module <counter_14>.
+WARNING:HDLCompiler:295 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 239: case condition never applies
+WARNING:HDLCompiler:295 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 243: case condition never applies
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mojo_top_0>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v".
-INFO:Xst:3210 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" line 64: Output port <pinr> of the instance <my_keypad> is unconnected or connected to loadless signal.
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v".
+INFO:Xst:3210 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" line 69: Output port <show_smile> of the instance <my_keypad> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <M_move_q>.
     Found 12-bit register for signal <M_game_q>.
-    Found 1-bit register for signal <M_move_q>.
-    Found 1-bit register for signal <M_step_q>.
-    Found 2-bit register for signal <M_state_q>.
     Found 12-bit register for signal <M_hint_q>.
+    Found 1-bit register for signal <M_step_normalizer_q>.
+    Found 2-bit register for signal <M_init_game_q<1:0>>.
+    Found 2-bit register for signal <M_state_q>.
+    Found 1-bit register for signal <M_showing_hint_q>.
+    Found 6-bit register for signal <M_step_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
-    | States             | 3                                              |
-    | Transitions        | 5                                              |
-    | Inputs             | 2                                              |
-    | Outputs            | 2                                              |
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | M_reset_cond_out (positive)                    |
     | Reset type         | synchronous                                    |
@@ -131,148 +95,151 @@ INFO:Xst:3210 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAh
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 1-bit adder for signal <M_step_q_PWR_1_o_add_0_OUT<0>> created at line 155.
+    Found 1-bit adder for signal <M_step_normalizer_q_PWR_1_o_add_6_OUT<0>> created at line 263.
+    Found 6-bit adder for signal <M_step_q[5]_GND_1_o_add_9_OUT> created at line 265.
+    Found 6-bit adder for signal <M_step_q[5]_GND_1_o_add_20_OUT> created at line 286.
+WARNING:Xst:737 - Found 1-bit latch for signal <M_my_led_show_hint>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 8-bit comparator equal for signal <n0006> created at line 262
+    Found 6-bit comparator greater for signal <PWR_1_o_M_step_q[5]_LessThan_15_o> created at line 276
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  26 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  42 D-type flip-flop(s).
+	inferred   1 Latch(s).
+	inferred   2 Comparator(s).
 	inferred   9 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
 
 Synthesizing Unit <board_updater_1>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v".
-WARNING:Xst:647 - Input <game> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 6-bit adder for signal <n0017> created at line 33.
-    Found 1x4-bit multiplier for signal <move_PWR_2_o_MuLt_0_OUT> created at line 33.
-    Found 287-bit shifter logical right for signal <n0011> created at line 33
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/board_updater_1.v".
+    Found 12-bit adder for signal <n0031> created at line 22.
+    Found 8x4-bit multiplier for signal <n0036> created at line 22.
+    Found 287-bit shifter logical right for signal <n0032> created at line 22
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   1 Adder/Subtractor(s).
+	inferred   2 Multiplexer(s).
 	inferred   1 Combinational logic shifter(s).
 Unit <board_updater_1> synthesized.
-WARNING:Xst:2972 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v" line 56. All outputs of instance <my_logic> of block <op_logic_12> are unconnected in block <operators_7>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v" line 67. All outputs of instance <my_shifter> of block <op_shifter_13> are unconnected in block <operators_7>. Underlying logic will be removed.
-
-Synthesizing Unit <operators_7>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v".
-INFO:Xst:3210 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v" line 26: Output port <z> of the instance <my_adder> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v" line 26: Output port <v> of the instance <my_adder> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/operators_7.v" line 26: Output port <n> of the instance <my_adder> is unconnected or connected to loadless signal.
-    Summary:
-	no macro.
-Unit <operators_7> synthesized.
-
-Synthesizing Unit <op_adder_10>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/op_adder_10.v".
-WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 13-bit subtractor for signal <sub> created at line 34.
-    Found 13-bit adder for signal <n0038> created at line 31.
-    Summary:
-	inferred   2 Adder/Subtractor(s).
-Unit <op_adder_10> synthesized.
-
-Synthesizing Unit <op_comparer_11>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/op_comparer_11.v".
-WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0025> created at line 17.
-    Summary:
-	inferred   2 Multiplexer(s).
-Unit <op_comparer_11> synthesized.
-
-Synthesizing Unit <op_logic_12>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/op_logic_12.v".
-WARNING:Xst:647 - Input <alufn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <alufn<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Summary:
-	no macro.
-Unit <op_logic_12> synthesized.
-
-Synthesizing Unit <op_shifter_13>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/op_shifter_13.v".
-WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Summary:
-	no macro.
-Unit <op_shifter_13> synthesized.
 
 Synthesizing Unit <led_matrix_controller_2>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_controller_2.v".
-WARNING:Xst:647 - Input <hint> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <step> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <show_hint> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 6-bit subtractor for signal <n0031> created at line 38.
-    Found 3-bit adder for signal <n0021> created at line 37.
-    Found 6-bit adder for signal <n0022> created at line 38.
-    Found 4-bit adder for signal <n0028> created at line 44.
-    Found 23-bit shifter logical right for signal <n0020> created at line 44
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_controller_2.v".
+    Found 6-bit subtractor for signal <n0118> created at line 44.
+    Found 5-bit subtractor for signal <GND_4_o_GND_4_o_sub_23_OUT> created at line 80.
+    Found 5-bit subtractor for signal <GND_4_o_GND_4_o_sub_30_OUT> created at line 86.
+    Found 5-bit subtractor for signal <GND_4_o_GND_4_o_sub_31_OUT> created at line 86.
+    Found 4-bit adder for signal <n0097> created at line 43.
+    Found 6-bit adder for signal <n0065> created at line 44.
+    Found 32-bit adder for signal <n0070> created at line 72.
+    Found 32-bit adder for signal <n0075> created at line 80.
+    Found 32-bit adder for signal <n0081> created at line 86.
+    Found 7-bit adder for signal <n0114> created at line 94.
+    Found 127-bit shifter logical right for signal <n0067> created at line 65
+    Found 127-bit shifter logical right for signal <n0071> created at line 72
+    Found 23-bit shifter logical right for signal <n0076> created at line 80
+    Found 23-bit shifter logical right for signal <n0082> created at line 86
+    Found 4-bit comparator lessequal for signal <n0014> created at line 78
+    Found 4-bit comparator lessequal for signal <n0016> created at line 79
+    Found 7-bit comparator lessequal for signal <n0039> created at line 94
     Summary:
-	inferred   4 Adder/Subtractor(s).
-	inferred   2 Multiplexer(s).
-	inferred   1 Combinational logic shifter(s).
+	inferred  10 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+	inferred  25 Multiplexer(s).
+	inferred   4 Combinational logic shifter(s).
 Unit <led_matrix_controller_2> synthesized.
 
-Synthesizing Unit <led_matrix_frame_8>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_frame_8.v".
-    Found 4-bit subtractor for signal <GND_12_o_GND_12_o_sub_6_OUT> created at line 24.
-    Found 3-bit subtractor for signal <GND_12_o_GND_12_o_sub_9_OUT> created at line 26.
-    Found 2-bit adder for signal <n0081> created at line 24.
-    Found 2-bit adder for signal <n0088> created at line 33.
-    Found 4-bit subtractor for signal <GND_12_o_GND_12_o_sub_25_OUT<3:0>> created at line 35.
-    Found 4-bit subtractor for signal <GND_12_o_GND_12_o_sub_21_OUT<3:0>> created at line 33.
-    Found 2x2-bit multiplier for signal <n0058> created at line 24.
-    Found 1x2-bit multiplier for signal <n0061> created at line 26.
-    Found 2x2-bit multiplier for signal <n0070> created at line 33.
-    Found 1x2-bit multiplier for signal <n0074> created at line 35.
+Synthesizing Unit <led_matrix_frame_15>.
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/led_matrix_frame_15.v".
+    Found 4-bit subtractor for signal <x[3]_x[3]_sub_2_OUT> created at line 23.
+    Found 4-bit subtractor for signal <y[3]_y[3]_sub_16_OUT> created at line 32.
+    Found 6-bit subtractor for signal <GND_5_o_GND_5_o_sub_24_OUT> created at line 35.
+    Found 5-bit adder for signal <n0083> created at line 24.
+    Found 5-bit adder for signal <n0089> created at line 33.
+    Found 7-bit adder for signal <n0103> created at line 33.
+    Found 4-bit subtractor for signal <GND_5_o_GND_5_o_sub_6_OUT<3:0>> created at line 24.
+    Found 4-bit subtractor for signal <GND_5_o_GND_5_o_sub_9_OUT<3:0>> created at line 26.
+    Found 4-bit subtractor for signal <GND_5_o_GND_5_o_sub_21_OUT<3:0>> created at line 33.
+    Found 4-bit subtractor for signal <GND_5_o_GND_5_o_sub_25_OUT<3:0>> created at line 35.
+    Found 5x2-bit multiplier for signal <n0060> created at line 24.
+    Found 4x2-bit multiplier for signal <n0063> created at line 26.
+    Found 5x2-bit multiplier for signal <n0072> created at line 33.
+    Found 4x2-bit multiplier for signal <n0076> created at line 35.
     Summary:
 	inferred   4 Multiplier(s).
-	inferred   6 Adder/Subtractor(s).
+	inferred  10 Adder/Subtractor(s).
 	inferred  32 Multiplexer(s).
-Unit <led_matrix_frame_8> synthesized.
+Unit <led_matrix_frame_15> synthesized.
 
 Synthesizing Unit <keypad_controller_3>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v".
-INFO:Xst:3210 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" line 22: Output port <x> of the instance <my_frame> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" line 22: Output port <y> of the instance <my_frame> is unconnected or connected to loadless signal.
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v".
+INFO:Xst:3210 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" line 23: Output port <x> of the instance <my_frame> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_controller_3.v" line 23: Output port <y> of the instance <my_frame> is unconnected or connected to loadless signal.
     Found 4x4-bit Read Only RAM for signal <M_my_frame_pin<3:0>>
+    Found 8-bit comparator lessequal for signal <n0001> created at line 61
     Summary:
 	inferred   1 RAM(s).
+	inferred   1 Comparator(s).
+	inferred   7 Multiplexer(s).
 Unit <keypad_controller_3> synthesized.
 
-Synthesizing Unit <keypad_frame_9>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_9.v".
-    Found 2-bit subtractor for signal <n0012> created at line 68.
-    Found 2-bit subtractor for signal <GND_16_o_GND_16_o_sub_10_OUT> created at line 68.
-    Found 3-bit adder for signal <n0014> created at line 68.
+Synthesizing Unit <keypad_frame_16>.
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/keypad_frame_16.v".
+    Found 4-bit subtractor for signal <GND_9_o_GND_9_o_sub_15_OUT> created at line 68.
+    Found 4-bit subtractor for signal <GND_9_o_GND_9_o_sub_16_OUT> created at line 68.
+    Found 8-bit adder for signal <GND_9_o_GND_9_o_add_16_OUT> created at line 68.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred   1 Multiplexer(s).
-Unit <keypad_frame_9> synthesized.
+Unit <keypad_frame_16> synthesized.
 
 Synthesizing Unit <reset_conditioner_4>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/reset_conditioner_4.v".
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/reset_conditioner_4.v".
     Found 4-bit register for signal <M_stage_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
 Unit <reset_conditioner_4> synthesized.
 
-Synthesizing Unit <counter_5>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/counter_5.v".
-    Found 30-bit register for signal <M_ctr_q>.
-    Found 30-bit adder for signal <M_ctr_q[29]_GND_18_o_add_0_OUT> created at line 35.
+Synthesizing Unit <edge_detector_5>.
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/edge_detector_5.v".
+    Found 1-bit register for signal <M_last_q>.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  30 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
-Unit <counter_5> synthesized.
+	inferred   1 D-type flip-flop(s).
+Unit <edge_detector_5> synthesized.
 
-Synthesizing Unit <counter_6>.
-    Related source file is "C:/Users/PhoebusXS/Documents/GitHub/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/counter_6.v".
-    Found 26-bit register for signal <M_ctr_q>.
-    Found 26-bit adder for signal <M_ctr_q[25]_GND_19_o_add_0_OUT> created at line 35.
+Synthesizing Unit <button_conditioner_9>.
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/button_conditioner_9.v".
+    Found 20-bit register for signal <M_ctr_q>.
+    Found 20-bit adder for signal <M_ctr_q[19]_GND_12_o_add_2_OUT> created at line 39.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  26 D-type flip-flop(s).
+	inferred  20 D-type flip-flop(s).
+Unit <button_conditioner_9> synthesized.
+
+Synthesizing Unit <pipeline_17>.
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/pipeline_17.v".
+    Found 2-bit register for signal <M_pipe_q>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <pipeline_17> synthesized.
+
+Synthesizing Unit <counter_13>.
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/counter_13.v".
+    Found 18-bit register for signal <M_ctr_q>.
+    Found 18-bit adder for signal <M_ctr_q[17]_GND_14_o_add_0_OUT> created at line 35.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  18 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
-Unit <counter_6> synthesized.
+Unit <counter_13> synthesized.
+
+Synthesizing Unit <counter_14>.
+    Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/counter_14.v".
+    Found 25-bit register for signal <M_ctr_q>.
+    Found 25-bit adder for signal <M_ctr_d> created at line 35.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  25 D-type flip-flop(s).
+Unit <counter_14> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -281,41 +248,56 @@ Macro Statistics
 # RAMs                                                 : 1
  4x4-bit single-port Read Only RAM                     : 1
 # Multipliers                                          : 5
- 2x1-bit multiplier                                    : 2
- 2x2-bit multiplier                                    : 2
- 4x1-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 19
+ 4x2-bit multiplier                                    : 2
+ 5x2-bit multiplier                                    : 2
+ 8x4-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 33
  1-bit adder                                           : 1
- 13-bit addsub                                         : 1
- 13-bit subtractor                                     : 1
- 2-bit adder                                           : 2
- 2-bit subtractor                                      : 2
- 26-bit adder                                          : 1
- 3-bit adder                                           : 2
- 3-bit subtractor                                      : 1
- 30-bit adder                                          : 1
+ 12-bit adder                                          : 1
+ 18-bit adder                                          : 1
+ 20-bit adder                                          : 4
+ 25-bit adder                                          : 1
+ 32-bit adder                                          : 3
  4-bit adder                                           : 1
- 4-bit subtractor                                      : 3
- 6-bit adder                                           : 2
- 6-bit subtractor                                      : 1
-# Registers                                            : 7
- 1-bit register                                        : 2
+ 4-bit subtractor                                      : 8
+ 5-bit adder                                           : 2
+ 5-bit subtractor                                      : 3
+ 6-bit adder                                           : 3
+ 6-bit subtractor                                      : 2
+ 7-bit adder                                           : 2
+ 8-bit adder                                           : 1
+# Registers                                            : 22
+ 1-bit register                                        : 6
  12-bit register                                       : 2
- 26-bit register                                       : 1
- 30-bit register                                       : 1
+ 18-bit register                                       : 1
+ 2-bit register                                        : 5
+ 20-bit register                                       : 4
+ 25-bit register                                       : 1
  4-bit register                                        : 1
-# Multiplexers                                         : 48
- 1-bit 2-to-1 multiplexer                              : 31
- 1-bit 4-to-1 multiplexer                              : 1
- 12-bit 2-to-1 multiplexer                             : 14
- 26-bit 2-to-1 multiplexer                             : 1
- 30-bit 2-to-1 multiplexer                             : 1
-# Logic shifters                                       : 2
- 23-bit shifter logical right                          : 1
+ 6-bit register                                        : 1
+ 8-bit register                                        : 1
+# Latches                                              : 1
+ 1-bit latch                                           : 1
+# Comparators                                          : 6
+ 4-bit comparator lessequal                            : 2
+ 6-bit comparator greater                              : 1
+ 7-bit comparator lessequal                            : 1
+ 8-bit comparator equal                                : 1
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 77
+ 1-bit 2-to-1 multiplexer                              : 38
+ 12-bit 2-to-1 multiplexer                             : 12
+ 18-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 20
+ 6-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 3
+# Logic shifters                                       : 5
+ 127-bit shifter logical right                         : 2
+ 23-bit shifter logical right                          : 2
  287-bit shifter logical right                         : 1
 # FSMs                                                 : 1
-# Xors                                                 : 1
- 1-bit xor2                                            : 1
+# Xors                                                 : 2
+ 12-bit xor2                                           : 2
 
 =========================================================================
 
@@ -325,16 +307,20 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <board_updater_1>.
-	Multiplier <Mmult_move_PWR_2_o_MuLt_0_OUT> in block <board_updater_1> and adder/subtractor <Madd_n0017> in block <board_updater_1> are combined into a MAC<Maddsub_move_PWR_2_o_MuLt_0_OUT>.
+	Multiplier <Mmult_n0036> in block <board_updater_1> and adder/subtractor <Madd_n0031_Madd> in block <board_updater_1> are combined into a MAC<Maddsub_n0036>.
 Unit <board_updater_1> synthesized (advanced).
 
-Synthesizing (advanced) Unit <counter_5>.
+Synthesizing (advanced) Unit <button_conditioner_9>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
-Unit <counter_5> synthesized (advanced).
+Unit <button_conditioner_9> synthesized (advanced).
 
-Synthesizing (advanced) Unit <counter_6>.
+Synthesizing (advanced) Unit <counter_13>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
-Unit <counter_6> synthesized (advanced).
+Unit <counter_13> synthesized (advanced).
+
+Synthesizing (advanced) Unit <counter_14>.
+The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
+Unit <counter_14> synthesized (advanced).
 
 Synthesizing (advanced) Unit <keypad_controller_3>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_my_frame_pin<3:0>> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -350,13 +336,13 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_M_my_frame_pin<3:0>> will be impleme
     -----------------------------------------------------------------------
 Unit <keypad_controller_3> synthesized (advanced).
 
-Synthesizing (advanced) Unit <led_matrix_frame_8>.
-	Adder/Subtractor <Madd_n0081> in block <led_matrix_frame_8> and  <Mmult_n0058> in block <led_matrix_frame_8> are combined into a MULT with pre-adder <Mmult_n00581>.
-	Adder/Subtractor <Madd_n0088> in block <led_matrix_frame_8> and  <Mmult_n0070> in block <led_matrix_frame_8> are combined into a MULT with pre-adder <Mmult_n00701>.
-Unit <led_matrix_frame_8> synthesized (advanced).
+Synthesizing (advanced) Unit <led_matrix_frame_15>.
+	Adder/Subtractor <Madd_n0089> in block <led_matrix_frame_15> and  <Mmult_n0072> in block <led_matrix_frame_15> are combined into a MULT with pre-adder <Mmult_n00721>.
+	Adder/Subtractor <Madd_n0083> in block <led_matrix_frame_15> and  <Mmult_n0060> in block <led_matrix_frame_15> are combined into a MULT with pre-adder <Mmult_n00601>.
+Unit <led_matrix_frame_15> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mojo_top_0>.
-The following registers are absorbed into counter <M_step_q>: 1 register on signal <M_step_q>.
+The following registers are absorbed into counter <M_step_normalizer_q>: 1 register on signal <M_step_normalizer_q>.
 Unit <mojo_top_0> synthesized (advanced).
 
 =========================================================================
@@ -366,40 +352,53 @@ Macro Statistics
 # RAMs                                                 : 1
  4x4-bit single-port distributed Read Only RAM         : 1
 # MACs                                                 : 3
- 2x2-to-4-bit Mult with pre-adder                      : 2
- 4x1-to-6-bit MAC                                      : 1
+ 2x5-to-7-bit Mult with pre-adder                      : 2
+ 8x4-to-8-bit MAC                                      : 1
 # Multipliers                                          : 2
- 2x1-bit multiplier                                    : 2
-# Adders/Subtractors                                   : 12
- 1-bit adder                                           : 3
- 1-bit subtractor                                      : 2
- 13-bit addsub                                         : 1
- 13-bit subtractor                                     : 1
+ 4x2-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 22
  3-bit subtractor                                      : 1
- 4-bit adder                                           : 1
- 4-bit subtractor                                      : 3
-# Counters                                             : 3
+ 4-bit adder                                           : 5
+ 4-bit subtractor                                      : 9
+ 4-bit subtractor borrow in                            : 1
+ 5-bit subtractor                                      : 1
+ 6-bit adder                                           : 3
+ 7-bit adder                                           : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
  1-bit up counter                                      : 1
- 26-bit up counter                                     : 1
- 30-bit up counter                                     : 1
-# Registers                                            : 29
- Flip-Flops                                            : 29
-# Multiplexers                                         : 44
- 1-bit 2-to-1 multiplexer                              : 29
- 1-bit 4-to-1 multiplexer                              : 1
- 12-bit 2-to-1 multiplexer                             : 14
-# Logic shifters                                       : 2
- 23-bit shifter logical right                          : 1
+ 18-bit up counter                                     : 1
+ 20-bit up counter                                     : 4
+ 25-bit up counter                                     : 1
+# Registers                                            : 57
+ Flip-Flops                                            : 57
+# Comparators                                          : 6
+ 4-bit comparator lessequal                            : 2
+ 6-bit comparator greater                              : 1
+ 7-bit comparator lessequal                            : 1
+ 8-bit comparator equal                                : 1
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 75
+ 1-bit 2-to-1 multiplexer                              : 37
+ 12-bit 2-to-1 multiplexer                             : 12
+ 4-bit 2-to-1 multiplexer                              : 20
+ 6-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 3
+# Logic shifters                                       : 5
+ 127-bit shifter logical right                         : 2
+ 23-bit shifter logical right                          : 2
  287-bit shifter logical right                         : 1
 # FSMs                                                 : 1
-# Xors                                                 : 1
- 1-bit xor2                                            : 1
+# Xors                                                 : 2
+ 12-bit xor2                                           : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1293 - FF/Latch <M_init_game_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <M_init_game_q_1> is unconnected in block <mojo_top_0>.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_0> on signal <M_state_q[1:2]> with user encoding.
 -------------------
@@ -408,64 +407,53 @@ Optimizing FSM <FSM_0> on signal <M_state_q[1:2]> with user encoding.
  00    | 00
  01    | 01
  10    | 10
+ 11    | 11
 -------------------
-WARNING:Xst:1293 - FF/Latch <M_hint_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_hint_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_hint_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_hint_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_hint_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_game_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_game_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_game_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_game_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_game_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_game_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_game_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <M_move_q> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2973 - All outputs of instance <my_updater/my_operators/my_adder> of block <op_adder_10> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_0> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_1> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_2> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_3> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_4> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_5> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_6> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_7> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_8> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_9> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_10> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_11> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_12> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_13> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_14> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_15> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_16> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_17> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_18> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_19> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_20> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_21> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_22> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_23> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_24> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <ktr/M_ctr_q_25> of sequential type is unconnected in block <mojo_top_0>.
-INFO:Xst:2261 - The FF/Latch <M_hint_q_0> in Unit <mojo_top_0> is equivalent to the following 11 FFs/Latches, which will be removed : <M_hint_q_3> <M_hint_q_4> <M_hint_q_5> <M_hint_q_7> <M_hint_q_9> <M_hint_q_10> <M_game_q_2> <M_game_q_4> <M_game_q_5> <M_game_q_6> <M_game_q_9> 
-WARNING:Xst:2677 - Node <M_step_q> of sequential type is unconnected in block <mojo_top_0>.
 
 Optimizing unit <mojo_top_0> ...
 
-Optimizing unit <led_matrix_frame_8> ...
+Optimizing unit <led_matrix_controller_2> ...
 
-Optimizing unit <op_adder_10> ...
-INFO:Xst:2261 - The FF/Latch <M_hint_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <M_state_q_FSM_FFd2> 
+Optimizing unit <led_matrix_frame_15> ...
+
+Optimizing unit <keypad_controller_3> ...
+
+Optimizing unit <keypad_frame_16> ...
+
+Optimizing unit <board_updater_1> ...
+WARNING:Xst:1293 - FF/Latch <M_move_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_move_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_move_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_10> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_11> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_12> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_13> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_14> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_15> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_16> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_17> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_0> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_1> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_2> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_3> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_4> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_5> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_6> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_7> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_8> 
+INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <ktr/M_ctr_q_9> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 1.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 8.
 
 Final Macro Processing ...
 
 Processing Unit <mojo_top_0> :
+	Found 2-bit shift register for signal <button_cond_a/sync/M_pipe_q_1>.
+	Found 2-bit shift register for signal <button_cond_b/sync/M_pipe_q_1>.
+	Found 2-bit shift register for signal <button_cond_c/sync/M_pipe_q_1>.
+	Found 2-bit shift register for signal <button_cond_d/sync/M_pipe_q_1>.
 INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <reset_cond/M_stage_q_3> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
 Unit <mojo_top_0> processed.
 
@@ -473,8 +461,10 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 36
- Flip-Flops                                            : 36
+# Registers                                            : 152
+ Flip-Flops                                            : 152
+# Shift Registers                                      : 4
+ 2-bit shift register                                  : 4
 
 =========================================================================
 
@@ -495,11 +485,16 @@ Partition Implementation Status
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 36    |
------------------------------------+------------------------+-------+
+-----------------------------------------------------------------+----------------------------+-------+
+Clock Signal                                                     | Clock buffer(FF name)      | Load  |
+-----------------------------------------------------------------+----------------------------+-------+
+clk                                                              | BUFGP                      | 160   |
+M_state_q[1]_GND_16_o_Mux_58_o(M_state_q[1]_GND_16_o_Mux_58_o1:O)| NONE(*)(M_my_led_show_hint)| 1     |
+-----------------------------------------------------------------+----------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -509,9 +504,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.880ns (Maximum Frequency: 204.918MHz)
+   Minimum period: 8.396ns (Maximum Frequency: 119.104MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 8.382ns
+   Maximum output required time after clock: 16.076ns
    Maximum combinational path delay: No path found
 
 =========================================================================

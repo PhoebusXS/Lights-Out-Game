@@ -5,7 +5,7 @@
 */
 
 module board_updater_1 (
-    input move,
+    input [7:0] move,
     input [11:0] game,
     input [11:0] hint,
     input [143:0] mask,
@@ -17,65 +17,54 @@ module board_updater_1 (
   
   reg [11:0] move_pos;
   
-  wire [12-1:0] M_my_operators_ans;
-  reg [12-1:0] M_my_operators_operand_one;
-  reg [12-1:0] M_my_operators_operand_two;
-  reg [6-1:0] M_my_operators_alufn;
-  operators_7 my_operators (
-    .operand_one(M_my_operators_operand_one),
-    .operand_two(M_my_operators_operand_two),
-    .alufn(M_my_operators_alufn),
-    .ans(M_my_operators_ans)
-  );
-  
   always @* begin
-    M_my_operators_alufn = 14'h277e;
-    M_my_operators_operand_one = mask[(move)*12+11-:12];
-    M_my_operators_operand_two = game;
-    new_game = M_my_operators_ans;
+    if (move != 6'h2a) begin
+      new_game = game ^ mask[(move)*12+11-:12];
+    end else begin
+      new_game = game;
+    end
     
     case (move)
       1'h0: begin
-        move_pos = 37'h174876e800;
+        move_pos = 12'h800;
       end
       1'h1: begin
-        move_pos = 34'h2540be400;
+        move_pos = 12'h400;
       end
       2'h2: begin
-        move_pos = 30'h3b9aca00;
+        move_pos = 12'h200;
       end
       2'h3: begin
-        move_pos = 27'h5f5e100;
+        move_pos = 12'h100;
       end
       3'h4: begin
-        move_pos = 24'h989680;
+        move_pos = 12'h080;
       end
       3'h5: begin
-        move_pos = 20'hf4240;
+        move_pos = 12'h040;
       end
       3'h6: begin
-        move_pos = 17'h186a0;
+        move_pos = 12'h020;
       end
       3'h7: begin
-        move_pos = 14'h2710;
+        move_pos = 12'h010;
       end
       4'h8: begin
-        move_pos = 10'h3e8;
+        move_pos = 12'h008;
       end
       4'h9: begin
-        move_pos = 7'h64;
+        move_pos = 12'h004;
       end
       4'ha: begin
-        move_pos = 4'ha;
+        move_pos = 12'h002;
       end
       4'hb: begin
-        move_pos = 1'h1;
+        move_pos = 12'h001;
       end
       default: begin
-        move_pos = 1'h0;
+        move_pos = 12'h000;
       end
     endcase
-    M_my_operators_operand_two = hint;
-    new_hint = M_my_operators_ans;
+    new_hint = hint ^ move_pos;
   end
 endmodule

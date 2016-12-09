@@ -8,40 +8,46 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Thu Dec 08 14:03:53 2016
+Mapped Date    : Sat Dec 10 02:58:39 2016
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    0
+Number of warnings:    1
 Slice Logic Utilization:
-  Number of Slice Registers:                    36 out of  11,440    1%
-    Number used as Flip Flops:                  36
-    Number used as Latches:                      0
+  Number of Slice Registers:                   157 out of  11,440    1%
+    Number used as Flip Flops:                 156
+    Number used as Latches:                      1
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                         81 out of   5,720    1%
-    Number used as logic:                       80 out of   5,720    1%
-      Number using O6 output only:              48
-      Number using O5 output only:              28
-      Number using O5 and O6:                    4
+  Number of Slice LUTs:                        356 out of   5,720    6%
+    Number used as logic:                      344 out of   5,720    6%
+      Number using O6 output only:             201
+      Number using O5 output only:             111
+      Number using O5 and O6:                   32
       Number used as ROM:                        0
-    Number used as Memory:                       0 out of   1,440    0%
-    Number used exclusively as route-thrus:      1
+    Number used as Memory:                       4 out of   1,440    1%
+      Number used as Dual Port RAM:              0
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:             4
+        Number using O6 output only:             4
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:      8
       Number with same-slice register load:      0
-      Number with same-slice carry load:         1
+      Number with same-slice carry load:         8
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    29 out of   1,430    2%
-  Number of MUXCYs used:                        40 out of   2,860    1%
-  Number of LUT Flip Flop pairs used:           85
-    Number with an unused Flip Flop:            50 out of      85   58%
-    Number with an unused LUT:                   4 out of      85    4%
-    Number of fully used LUT-FF pairs:          31 out of      85   36%
-    Number of unique control sets:               3
+  Number of occupied Slices:                   118 out of   1,430    8%
+  Number of MUXCYs used:                       152 out of   2,860    5%
+  Number of LUT Flip Flop pairs used:          356
+    Number with an unused Flip Flop:           202 out of     356   56%
+    Number with an unused LUT:                   0 out of     356    0%
+    Number of fully used LUT-FF pairs:         154 out of     356   43%
+    Number of unique control sets:              11
     Number of slice register sites lost
-      to control set restrictions:              12 out of  11,440    1%
+      to control set restrictions:              47 out of  11,440    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -78,11 +84,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.07
+Average Fanout of Non-Clock Nets:                4.11
 
-Peak Memory Usage:  376 MB
-Total REAL time to MAP completion:  4 secs 
-Total CPU time to MAP completion (all processors):   4 secs 
+Peak Memory Usage:  418 MB
+Total REAL time to MAP completion:  7 secs 
+Total CPU time to MAP completion (all processors):   7 secs 
 
 Table of Contents
 -----------------
@@ -105,19 +111,16 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   M_state_q[1]_GND_16_o_Mux_58_o is sourced by a combinatorial pin. This is not
+   good design practice. Use the CE pin to control the loading of data into the
+   flip-flop.
 
 Section 3 - Informational
 -------------------------
 INFO:Map:284 - Map is running with the multi-threading option on. Map currently
    supports the use of up to 2 processors. Based on the the user options and
    machine load, Map will use 2 processors during this run.
-INFO:LIT:243 - Logical network pinc(3)_IBUF has no load.
-INFO:LIT:395 - The above info message is repeated 3 more times for the following
-   (max. 5 shown):
-   pinc(2)_IBUF,
-   pinc(1)_IBUF,
-   pinc(0)_IBUF
-   To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -132,34 +135,42 @@ INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-   1 block(s) removed
-   7 block(s) optimized away
-   1 signal(s) removed
+  30 block(s) optimized away
 
 Section 5 - Removed Logic
 -------------------------
-
-The trimmed logic report below shows the logic removed from your design due to
-sourceless or loadless signals, and VCC or ground connections.  If the removal
-of a signal or symbol results in the subsequent removal of an additional signal
-or symbol, the message explaining that second removal will be indented.  This
-indentation will be repeated as a chain of related logic is removed.
-
-To quickly locate the original cause for the removal of a chain of logic, look
-above the place where that logic is listed in the trimming report, then locate
-the lines that are least indented (begin at the leftmost edge).
-
-The signal "my_led/M_my_frame_x" is sourceless and has been removed.
-Unused block "my_led/Mmux_M_my_frame_x11" (ROM) removed.
 
 Optimized Block(s):
 TYPE 		BLOCK
 GND 		XST_GND
 VCC 		XST_VCC
+GND 		button_cond_a/XST_GND
+VCC 		button_cond_a/XST_VCC
+GND 		button_cond_a/sync/XST_GND
+VCC 		button_cond_a/sync/XST_VCC
+GND 		button_cond_b/XST_GND
+VCC 		button_cond_b/XST_VCC
+GND 		button_cond_b/sync/XST_GND
+VCC 		button_cond_b/sync/XST_VCC
+GND 		button_cond_c/XST_GND
+VCC 		button_cond_c/XST_VCC
+GND 		button_cond_c/sync/XST_GND
+VCC 		button_cond_c/sync/XST_VCC
+GND 		button_cond_d/XST_GND
+VCC 		button_cond_d/XST_VCC
+GND 		button_cond_d/sync/XST_GND
+VCC 		button_cond_d/sync/XST_VCC
 GND 		ctr/GND
 VCC 		ctr/VCC
+GND 		ktr/GND
+VCC 		ktr/VCC
+GND 		my_keypad/XST_GND
+VCC 		my_keypad/XST_VCC
+GND 		my_keypad/my_frame/XST_GND
+VCC 		my_keypad/my_frame/XST_VCC
+GND 		my_led/XST_GND
 GND 		my_led/my_frame/XST_GND
-VCC 		my_led/my_frame/XST_VCC
+GND 		my_updater/XST_GND
 GND 		reset_cond/XST_GND
 
 To enable printing of redundant blocks removed and signals merged, set the
@@ -197,10 +208,10 @@ Section 6 - IOB Properties
 | pinb[9]                            | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | pinb[10]                           | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | pinb[11]                           | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| pinc(0)                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
-| pinc(1)                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
-| pinc(2)                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
-| pinc(3)                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| pinc[0]                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| pinc[1]                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| pinc[2]                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| pinc[3]                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | pind[0]                            | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | pind[1]                            | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | pind[2]                            | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |

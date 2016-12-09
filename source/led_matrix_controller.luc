@@ -14,7 +14,7 @@ module led_matrix_controller (
     sig x[4]; // row number, 1 to 8
     sig y[4]; // col number, 1 to 8
     sig smileface[8][8];
-    sig sadface[8][8] 
+    sig sadface[8][8];
 
     always {
 
@@ -30,7 +30,7 @@ module led_matrix_controller (
         smileface[2] = 8b01000010;
         smileface[1] = 8b00111100;
         smileface[0] = 8b00000000;
- 
+
         sadface[7] = 8b00100100;
         sadface[6] = 8b00100100;
         sadface[5] = 8b00100100;
@@ -44,7 +44,7 @@ module led_matrix_controller (
         my_frame.x = 0;
         my_frame.y = 0;
         my_frame.yellow = 0;
- 
+
         if (smile == 1) { // show smile face
             if (smileface[x-1][y-1] == 1){
                 my_frame.x = x;
@@ -91,5 +91,5 @@ module led_matrix_controller (
 // 0 0 0 0 0 0 0 0
 // 1 0 0 0 0 0 0 1
 // 0 1 0 0 0 0 1 0
-// 0 0 1 1 1 1 0 0     
+// 0 0 1 1 1 1 0 0
 // 0 0 0 0 0 0 0 0

@@ -15,17 +15,17 @@ module mojo_top_0 (
   
   
   
-  localparam INIT_GAME = 12'h274;
-  
-  localparam INIT_HINT = 12'h6b9;
-  
   reg [143:0] mask;
   
   reg rst;
   
+  reg [35:0] game_possibilties;
+  
+  reg [35:0] hint_possibilties;
+  
   wire [12-1:0] M_my_updater_new_game;
   wire [12-1:0] M_my_updater_new_hint;
-  reg [1-1:0] M_my_updater_move;
+  reg [8-1:0] M_my_updater_move;
   reg [12-1:0] M_my_updater_game;
   reg [12-1:0] M_my_updater_hint;
   reg [144-1:0] M_my_updater_mask;
@@ -42,23 +42,28 @@ module mojo_top_0 (
   wire [12-1:0] M_my_led_pinb;
   reg [12-1:0] M_my_led_game;
   reg [12-1:0] M_my_led_hint;
-  reg [1-1:0] M_my_led_step;
+  reg [6-1:0] M_my_led_step;
   reg [6-1:0] M_my_led_ind;
   reg [1-1:0] M_my_led_show_hint;
+  reg [1-1:0] M_my_led_smile;
+  reg [1-1:0] M_my_led_sad;
   led_matrix_controller_2 my_led (
     .game(M_my_led_game),
     .hint(M_my_led_hint),
     .step(M_my_led_step),
     .ind(M_my_led_ind),
     .show_hint(M_my_led_show_hint),
+    .smile(M_my_led_smile),
+    .sad(M_my_led_sad),
     .pina(M_my_led_pina),
     .pinb(M_my_led_pinb)
   );
   
   wire [4-1:0] M_my_keypad_pinr;
-  wire [1-1:0] M_my_keypad_move;
+  wire [8-1:0] M_my_keypad_move;
   wire [1-1:0] M_my_keypad_restart_game;
   wire [1-1:0] M_my_keypad_show_hint;
+  wire [1-1:0] M_my_keypad_show_smile;
   reg [2-1:0] M_my_keypad_ind;
   reg [4-1:0] M_my_keypad_pin;
   keypad_controller_3 my_keypad (
@@ -67,7 +72,8 @@ module mojo_top_0 (
     .pinr(M_my_keypad_pinr),
     .move(M_my_keypad_move),
     .restart_game(M_my_keypad_restart_game),
-    .show_hint(M_my_keypad_show_hint)
+    .show_hint(M_my_keypad_show_hint),
+    .show_smile(M_my_keypad_show_smile)
   );
   
   wire [1-1:0] M_reset_cond_out;
@@ -77,37 +83,110 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
+  wire [1-1:0] M_edge_detector_a_out;
+  reg [1-1:0] M_edge_detector_a_in;
+  edge_detector_5 edge_detector_a (
+    .clk(clk),
+    .in(M_edge_detector_a_in),
+    .out(M_edge_detector_a_out)
+  );
+  wire [1-1:0] M_edge_detector_b_out;
+  reg [1-1:0] M_edge_detector_b_in;
+  edge_detector_5 edge_detector_b (
+    .clk(clk),
+    .in(M_edge_detector_b_in),
+    .out(M_edge_detector_b_out)
+  );
+  wire [1-1:0] M_edge_detector_c_out;
+  reg [1-1:0] M_edge_detector_c_in;
+  edge_detector_5 edge_detector_c (
+    .clk(clk),
+    .in(M_edge_detector_c_in),
+    .out(M_edge_detector_c_out)
+  );
+  wire [1-1:0] M_edge_detector_d_out;
+  reg [1-1:0] M_edge_detector_d_in;
+  edge_detector_5 edge_detector_d (
+    .clk(clk),
+    .in(M_edge_detector_d_in),
+    .out(M_edge_detector_d_out)
+  );
+  wire [1-1:0] M_button_cond_a_out;
+  reg [1-1:0] M_button_cond_a_in;
+  button_conditioner_9 button_cond_a (
+    .clk(clk),
+    .in(M_button_cond_a_in),
+    .out(M_button_cond_a_out)
+  );
+  wire [1-1:0] M_button_cond_b_out;
+  reg [1-1:0] M_button_cond_b_in;
+  button_conditioner_9 button_cond_b (
+    .clk(clk),
+    .in(M_button_cond_b_in),
+    .out(M_button_cond_b_out)
+  );
+  wire [1-1:0] M_button_cond_c_out;
+  reg [1-1:0] M_button_cond_c_in;
+  button_conditioner_9 button_cond_c (
+    .clk(clk),
+    .in(M_button_cond_c_in),
+    .out(M_button_cond_c_out)
+  );
+  wire [1-1:0] M_button_cond_d_out;
+  reg [1-1:0] M_button_cond_d_in;
+  button_conditioner_9 button_cond_d (
+    .clk(clk),
+    .in(M_button_cond_d_in),
+    .out(M_button_cond_d_out)
+  );
   localparam INIT_state = 2'd0;
   localparam PLAY_state = 2'd1;
   localparam FIN_state = 2'd2;
+  localparam LOSE_state = 2'd3;
   
   reg [1:0] M_state_d, M_state_q = INIT_state;
   wire [6-1:0] M_ctr_value;
-  counter_5 ctr (
+  counter_13 ctr (
     .clk(clk),
     .rst(rst),
     .value(M_ctr_value)
   );
   wire [2-1:0] M_ktr_value;
-  counter_6 ktr (
+  counter_14 ktr (
     .clk(clk),
     .rst(rst),
     .value(M_ktr_value)
   );
   reg [11:0] M_game_d, M_game_q = 1'h0;
   reg [11:0] M_hint_d, M_hint_q = 1'h0;
-  reg M_move_d, M_move_q = 1'h0;
-  reg M_step_d, M_step_q = 1'h0;
+  reg [7:0] M_move_d, M_move_q = 1'h0;
+  reg [5:0] M_step_d, M_step_q = 1'h0;
+  reg [11:0] M_init_game_d, M_init_game_q = 1'h0;
+  reg [11:0] M_init_hint_d, M_init_hint_q = 1'h0;
+  reg [0:0] M_showing_hint_d, M_showing_hint_q = 1'h0;
+  reg M_step_normalizer_d, M_step_normalizer_q = 1'h0;
   
   always @* begin
     M_state_d = M_state_q;
+    M_init_game_d = M_init_game_q;
+    M_step_normalizer_d = M_step_normalizer_q;
+    M_showing_hint_d = M_showing_hint_q;
     M_hint_d = M_hint_q;
     M_game_d = M_game_q;
+    M_init_hint_d = M_init_hint_q;
     M_step_d = M_step_q;
     M_move_d = M_move_q;
     
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
+    game_possibilties[0+11-:12] = 12'h4fe;
+    game_possibilties[12+11-:12] = 12'hc81;
+    game_possibilties[24+11-:12] = 12'ha27;
+    hint_possibilties[0+11-:12] = 12'h9be;
+    hint_possibilties[12+11-:12] = 12'h653;
+    hint_possibilties[24+11-:12] = 12'hb2e;
+    M_init_game_d = game_possibilties[0+11-:12];
+    M_init_hint_d = hint_possibilties[0+11-:12];
     mask[0+11-:12] = 12'hc80;
     mask[12+11-:12] = 12'he40;
     mask[24+11-:12] = 12'h720;
@@ -122,64 +201,117 @@ module mojo_top_0 (
     mask[132+11-:12] = 12'h013;
     M_my_updater_mask = mask;
     M_my_updater_hint = M_hint_q;
-    M_my_updater_move = 6'h2a;
+    M_my_updater_move = M_move_q;
     M_my_updater_game = M_game_q;
     pina = 1'h0;
     pinb = 1'h0;
     pind = 1'h0;
-    M_my_keypad_pin = pinc;
+    M_button_cond_a_in = pinc[0+0-:1];
+    M_button_cond_b_in = pinc[1+0-:1];
+    M_button_cond_c_in = pinc[2+0-:1];
+    M_button_cond_d_in = pinc[3+0-:1];
+    M_edge_detector_a_in = M_button_cond_a_out;
+    M_edge_detector_b_in = M_button_cond_b_out;
+    M_edge_detector_c_in = M_button_cond_c_out;
+    M_edge_detector_d_in = M_button_cond_d_out;
+    M_my_keypad_pin = {M_edge_detector_d_out, M_edge_detector_c_out, M_edge_detector_b_out, M_edge_detector_a_out};
     M_my_keypad_ind = M_ktr_value;
-    M_my_led_game[0+3-:4] = M_game_q[8+3-:4];
+    pind = M_my_keypad_pinr;
+    M_my_led_game[8+3-:4] = M_game_q[8+3-:4];
     M_my_led_game[4+3-:4] = M_game_q[4+3-:4];
-    M_my_led_game[8+3-:4] = M_game_q[0+3-:4];
-    M_my_led_hint[0+3-:4] = M_hint_q[8+3-:4];
+    M_my_led_game[0+3-:4] = M_game_q[0+3-:4];
+    M_my_led_hint[8+3-:4] = M_hint_q[8+3-:4];
     M_my_led_hint[4+3-:4] = M_hint_q[4+3-:4];
-    M_my_led_hint[8+3-:4] = M_hint_q[0+3-:4];
+    M_my_led_hint[0+3-:4] = M_hint_q[0+3-:4];
     M_my_led_step = M_step_q;
     M_my_led_ind = M_ctr_value;
-    M_my_led_show_hint = M_my_keypad_show_hint;
+    M_my_led_smile = 1'h0;
+    M_my_led_sad = 1'h0;
     
     case (M_state_q)
       INIT_state: begin
-        M_game_d = 12'h274;
-        M_hint_d = 12'h6b9;
+        
+        case (M_init_game_q[0+1-:2])
+          1'h1: begin
+            M_game_d = game_possibilties[12+11-:12];
+            M_hint_d = hint_possibilties[12+11-:12];
+          end
+          4'ha: begin
+            M_game_d = game_possibilties[24+11-:12];
+            M_hint_d = hint_possibilties[24+11-:12];
+          end
+          4'hb: begin
+            M_game_d = game_possibilties[0+11-:12];
+            M_hint_d = hint_possibilties[0+11-:12];
+          end
+          default: begin
+            M_game_d = game_possibilties[0+11-:12];
+            M_hint_d = hint_possibilties[0+11-:12];
+          end
+        endcase
         M_move_d = 6'h2a;
-        M_my_updater_hint = 12'h6b9;
-        M_my_updater_move = 6'h2a;
-        M_my_updater_game = 12'h274;
         M_step_d = 1'h0;
-        M_state_d = PLAY_state;
+        M_my_led_show_hint = 1'h0;
+        M_showing_hint_d = 1'h0;
+        M_step_normalizer_d = 1'h0;
+        if (M_my_keypad_move != 6'h2a) begin
+          M_state_d = PLAY_state;
+        end
       end
       PLAY_state: begin
+        if (M_move_q != M_my_keypad_move) begin
+          M_step_normalizer_d = M_step_normalizer_q + 1'h1;
+          if (M_step_normalizer_q - M_step_normalizer_q / 2'h2 * 2'h2 == 1'h1) begin
+            M_step_d = M_step_q + 1'h1;
+          end
+        end
         M_move_d = M_my_keypad_move;
-        M_step_d = M_step_q + 1'h1;
-        M_my_updater_hint = M_hint_q;
-        M_my_updater_move = M_move_q;
-        M_my_updater_game = M_game_q;
         M_game_d = M_my_updater_new_game;
         M_hint_d = M_my_updater_new_hint;
         pina = M_my_led_pina;
         pinb = M_my_led_pinb;
-        if (M_my_updater_new_hint == 1'h0) begin
+        if (M_game_q == 1'h0) begin
           M_state_d = FIN_state;
+        end
+        if (M_step_q > 6'h28) begin
+          M_state_d = LOSE_state;
         end
         if (M_my_keypad_restart_game == 1'h1) begin
           M_state_d = INIT_state;
         end
+        if (M_my_keypad_show_hint == 1'h1) begin
+          if (M_showing_hint_q == 1'h1) begin
+            M_my_led_show_hint = 1'h0;
+            M_showing_hint_d = 1'h0;
+            M_step_d = M_step_q + 3'h4;
+          end else begin
+            M_my_led_show_hint = 1'h1;
+            M_showing_hint_d = 1'h1;
+          end
+        end
       end
       FIN_state: begin
+        M_my_led_smile = 1'h1;
+        if (M_my_keypad_move != 6'h2a) begin
+          M_state_d = INIT_state;
+        end
+      end
+      LOSE_state: begin
+        M_my_led_sad = 1'h1;
         if (M_my_keypad_move != 6'h2a) begin
           M_state_d = INIT_state;
         end
       end
     endcase
+    pina = M_my_led_pina;
+    pinb = M_my_led_pinb;
   end
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_hint_q <= 1'h0;
+      M_move_q <= 1'h0;
     end else begin
-      M_hint_q <= M_hint_d;
+      M_move_q <= M_move_d;
     end
   end
   
@@ -195,9 +327,45 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_move_q <= 1'h0;
+      M_hint_q <= 1'h0;
     end else begin
-      M_move_q <= M_move_d;
+      M_hint_q <= M_hint_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_step_normalizer_q <= 1'h0;
+    end else begin
+      M_step_normalizer_q <= M_step_normalizer_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_init_game_q <= 1'h0;
+    end else begin
+      M_init_game_q <= M_init_game_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_state_q <= 1'h0;
+    end else begin
+      M_state_q <= M_state_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_showing_hint_q <= 1'h0;
+    end else begin
+      M_showing_hint_q <= M_showing_hint_d;
     end
   end
   
@@ -213,9 +381,9 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_init_hint_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_init_hint_q <= M_init_hint_d;
     end
   end
   

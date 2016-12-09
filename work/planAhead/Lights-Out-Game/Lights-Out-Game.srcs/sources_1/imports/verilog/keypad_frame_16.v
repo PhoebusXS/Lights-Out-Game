@@ -4,11 +4,11 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module keypad_frame_9 (
+module keypad_frame_16 (
     input [7:0] pin,
-    output reg x,
-    output reg y,
-    output reg keynum
+    output reg [2:0] x,
+    output reg [2:0] y,
+    output reg [7:0] keynum
   );
   
   
@@ -17,26 +17,26 @@ module keypad_frame_9 (
   
   reg [3:0] row;
   
-  reg rownum;
+  reg [2:0] rownum;
   
-  reg colnum;
+  reg [2:0] colnum;
   
   always @* begin
     col = pin[0+3-:4];
     row = pin[4+3-:4];
     
     case (row)
-      10'h3e8: begin
-        rownum = 1'h1;
+      4'h8: begin
+        rownum = 3'h4;
       end
-      7'h64: begin
-        rownum = 2'h2;
-      end
-      4'ha: begin
+      4'h4: begin
         rownum = 2'h3;
       end
-      1'h1: begin
-        rownum = 3'h4;
+      4'h2: begin
+        rownum = 2'h2;
+      end
+      4'h1: begin
+        rownum = 1'h1;
       end
       default: begin
         rownum = 1'h0;
@@ -44,17 +44,17 @@ module keypad_frame_9 (
     endcase
     
     case (col)
-      10'h3e8: begin
-        colnum = 1'h1;
+      4'h8: begin
+        colnum = 3'h4;
       end
-      7'h64: begin
-        colnum = 2'h2;
-      end
-      4'ha: begin
+      4'h4: begin
         colnum = 2'h3;
       end
-      1'h1: begin
-        colnum = 3'h4;
+      4'h2: begin
+        colnum = 2'h2;
+      end
+      4'h1: begin
+        colnum = 1'h1;
       end
       default: begin
         colnum = 1'h0;
@@ -63,7 +63,7 @@ module keypad_frame_9 (
     x = rownum;
     y = colnum;
     if (rownum == 1'h0 || colnum == 1'h0) begin
-      keynum = 1'h0;
+      keynum = 6'h2a;
     end else begin
       keynum = (rownum - 1'h1) * 3'h4 + (colnum - 1'h1);
     end
