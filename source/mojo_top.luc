@@ -67,7 +67,6 @@ module mojo_top (
         mask[10] = 12b000000100111;
         mask[11] = 12b000000010011;
 
-        // stupid code, exclusively for retarded Mojo
         my_updater.mask = mask;
         my_updater.hint = hint.q;
         my_updater.move = move.q;
@@ -102,25 +101,17 @@ module mojo_top (
                 move.d = 42;
                 step.d = 0;
                 my_led.show_hint = 0;
-
-                if (my_keypad.move != 42){
+                if (my_keypad.move != 42) {
                     state.d = state.PLAY;
                 }
-                my_led.show_hint = 0;
-        
-
       
-             state.PLAY:
+            state.PLAY:
                 led = move.q;
-                   // game.d = game.q ^ mask[0];
-                    //hint.d = hint.q ^ 12b000000000001;
                 move.d = my_keypad.move;
-                    //my_updater.hint = hint.q;
-                    //my_updater.game = game.q;
                 step.d = clock.value;
                 game.d = my_updater.new_game;
                 hint.d = my_updater.new_hint;
-                if (move.q == 42){led = 8b10000000;}
+                if (move.q == 42) {led = 8b10000000;}
                 
                 // display all the stuff
                 pina = my_led.pina;
@@ -150,7 +141,7 @@ module mojo_top (
                 }
 
                 
-        state.FIN:
+            state.FIN:
                 led = my_keypad.move;
                 // waiting for restart
         
@@ -164,7 +155,7 @@ module mojo_top (
                    state.d = state.INIT;
                 }
         
-      }
+        }
 
         pina = my_led.pina;
         pinb = my_led.pinb;
@@ -173,4 +164,4 @@ module mojo_top (
     }
 
  
-    }
+}
