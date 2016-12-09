@@ -3,7 +3,7 @@ module keypad_frame (
     input pin[8], // {in:row1to4, out:col1to4}
     output x[3],
     output y[3],
-    output keynum[4]
+    output keynum[8]
 ) {
     sig col[4];
     sig row[4];
@@ -41,7 +41,7 @@ module keypad_frame (
         x = rownum;
         y = colnum;
         if (rownum == 0 || colnum == 0) {
-            keynum = 0;
+            keynum = 42;
         } else {
             keynum = (rownum - 1) * 4 + (colnum - 1);
         }

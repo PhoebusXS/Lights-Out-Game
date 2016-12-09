@@ -9,6 +9,7 @@ module keypad_controller (
 ) {
     keypad_frame my_frame;
     sig pinout[4];
+    sig keynum[8];
 
     always {
         // defaults
@@ -34,15 +35,18 @@ module keypad_controller (
         pinr = pinout;
         my_frame.pin[3:0] = pinout;
 
+        keynum = my_frame.keynum;
         // interpreting outputs from frame
-        if (my_frame.keynum <= 11) {
+        if (keynum <= 11) {
             move = my_frame.keynum;
-        } else if (my_frame.keynum == 12) {
+        } else if (keynum == 12) {
             restart_game = 1;
-        } else if (my_frame.keynum == 15) {
+        } else if (keynum == 15) {
             show_hint = 1;
-        } else if (my_frame.keynum == 13) {
+        } else if (keynum == 13) {
             show_smile = 1;
+        } else {
+            move = 42;
         }
     }
 }

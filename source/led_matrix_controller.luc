@@ -7,7 +7,8 @@ module led_matrix_controller (
     input show_hint,
     input smile,
     output pina[12],
-    output pinb[12]
+    output pinb[12],
+    output showing_hint
 ) {
     led_matrix_frame my_frame;
     sig x[4]; // row number, 1 to 8
@@ -23,20 +24,20 @@ module led_matrix_controller (
         y = ind - (ind / 8) * 8 + 1; // fixed: mod
     
           smileface[7] = 8b00100100;
-  smileface[6] = 8b00100100;
-  smileface[5] = 8b00100100;
-  smileface[4] = 8b00000000;
-  smileface[3] = 8b10000001;
-  smileface[2] = 8b01000010;
-  smileface[1] = 8b00111100;
-  smileface[0] = 8b00000000;
+          smileface[6] = 8b00100100;
+          smileface[5] = 8b00100100;
+          smileface[4] = 8b00000000;
+          smileface[3] = 8b10000001;
+          smileface[2] = 8b01000010;
+          smileface[1] = 8b00111100;
+          smileface[0] = 8b00000000;
 
 
     
         // default values
-        my_frame.x = 0;
-        my_frame.y = 0;
-        my_frame.yellow = 0;
+          my_frame.x = 0;
+          my_frame.y = 0;
+          my_frame.yellow = 0;
     
     if (smile == 0) {    
         if (x <= 3) { // region of game|hint
@@ -66,8 +67,9 @@ module led_matrix_controller (
             my_frame.yellow = 0;
         }
     }
-    pina = my_frame.pina;
-    pinb = my_frame.pinb;
+        pina = my_frame.pina;
+        pinb = my_frame.pinb;
+        showing_hint = show_hint;
     }
 }
 

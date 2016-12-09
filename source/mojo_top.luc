@@ -8,11 +8,10 @@ module mojo_top (
     
     output led[8]
 ) {
-
-    const INIT_GAME = 12b001001110100;
-    const INIT_HINT = 12b011010111001;
     sig mask[12][12];
     sig rst;
+    sig game_possibilties[3][12];
+    sig hint_possibilties[3][12];
 
     board_updater my_updater;
     led_matrix_controller my_led;
@@ -22,12 +21,16 @@ module mojo_top (
         reset_conditioner reset_cond;
         .rst(rst) {
             fsm state = {INIT, PLAY, FIN};
-            counter ctr (#SIZE(6),#TOP(63),#DIV(14));
-            counter ktr (#SIZE(2), #TOP(3), #DIV(24));
+            counter ctr (#SIZE(6),#TOP(63),#DIV(12));
+            counter ktr (#SIZE(2), #DIV(24));
+            counter clock (#SIZE(6), #TOP(40), #DIV(26));
             dff game[12](.clk(clk), .rst(rst));
             dff hint[12](.clk(clk), .rst(rst));
             dff move[8](.clk(clk), .rst(rst));
             dff step[6](.clk(clk), .rst(rst));
+            dff init_game[12](.clk(clk), .rst(rst));
+            dff inti_hint[12](.clk(clk), .rst(rst));
+            dff count_for_init[3](.clk(clk), .rst(rst));
         }
     }
 
@@ -37,24 +40,37 @@ module mojo_top (
 
         reset_cond.in = ~rst_n; // input raw inverted reset signal
         rst = reset_cond.out;   // conditioned reset
+    
+        // update for initial game and hint set, currently not used, perhaps implemented later.
+        game_possibilties[0] = 12b010011111110;
+        game_possibilties[1] = 12b110010000001;
+        game_possibilties[2] = 12b101000100111;
+    
+        hint_possibilties[0] = 12b100110111110;
+        hint_possibilties[1] = 12b011001010011;
+        hint_possibilties[2] = 12b101100101110;
 
-        mask[11] = 12b110010000000;
-        mask[10] = 12b111001000000;
-        mask[9] = 12b011100100000;
-        mask[8] = 12b001100010000;
-        mask[7] = 12b100011001000;
-        mask[6] = 12b010011100100;
-        mask[5] = 12b001001110010;
-        mask[4] = 12b000100110001;
-        mask[3] = 12b000010001100;
-        mask[2] = 12b000001001110;
-        mask[1] = 12b000000100111;
-        mask[0] = 12b000000010011;
+        count_for_init.d = 0;
+        init_game.d = 12b010011111110;
+        inti_hint.d = 12b100110111110;
+    
+        mask[0] = 12b110010000000;
+        mask[1] = 12b111001000000;
+        mask[2] = 12b011100100000;
+        mask[3] = 12b001100010000;
+        mask[4] = 12b100011001000;
+        mask[5] = 12b010011100100;
+        mask[6] = 12b001001110010;
+        mask[7] = 12b000100110001;
+        mask[8] = 12b000010001100;
+        mask[9] = 12b000001001110;
+        mask[10] = 12b000000100111;
+        mask[11] = 12b000000010011;
 
         // stupid code, exclusively for retarded Mojo
         my_updater.mask = mask;
         my_updater.hint = hint.q;
-        my_updater.move = 42;
+        my_updater.move = move.q;
         my_updater.game = game.q;
         pina = 0;
         pinb = 0;
@@ -81,38 +97,37 @@ module mojo_top (
         case (state.q) {
             state.INIT:
                 led = 8b10101010;
-                game.d = INIT_GAME;
-                hint.d = INIT_HINT;
+                game.d = init_game.q;
+                hint.d = inti_hint.q;
                 move.d = 42;
-                my_updater.hint = INIT_HINT;
-                my_updater.move = 42;
-                my_updater.game = INIT_GAME;
                 step.d = 0;
                 my_led.show_hint = 0;
-                if (my_keypad.move == 3){
+
+                if (my_keypad.move != 42){
                     state.d = state.PLAY;
                 }
+                my_led.show_hint = 0;
+        
 
       
              state.PLAY:
-                led = my_keypad.move;
-                if (my_keypad.move != 42){
+                led = move.q;
                    // game.d = game.q ^ mask[0];
                     //hint.d = hint.q ^ 12b000000000001;
-                    step.d = 11;
-                    my_updater.hint = hint.q;
-                    my_updater.move = my_keypad.move;
-                    my_updater.game = game.q;
-                    game.d = my_updater.new_game;
-                    hint.d = my_updater.new_hint;
-                }
+                move.d = my_keypad.move;
+                    //my_updater.hint = hint.q;
+                    //my_updater.game = game.q;
+                step.d = clock.value;
+                game.d = my_updater.new_game;
+                hint.d = my_updater.new_hint;
+                if (move.q == 42){led = 8b10000000;}
                 
                 // display all the stuff
                 pina = my_led.pina;
                 pinb = my_led.pinb;
 
                 // see if game is solved
-                if (my_updater.new_hint == 0) {
+                if (game.q == 0) {
                     state.d = state.FIN;
                 }
                 
@@ -140,6 +155,11 @@ module mojo_top (
                 // waiting for restart
         
                 my_led.smile = 1 ;
+        
+                count_for_init.d = (count_for_init.q + 1) - (count_for_init.q / 3) * 3;
+                init_game.d = game_possibilties[count_for_init.q];
+                inti_hint.d = hint_possibilties[count_for_init.q];
+                
                 if (my_keypad.restart_game == 1) {
                    state.d = state.INIT;
                 }
