@@ -40,6 +40,7 @@ module mojo_top (
             dff init_game[12](.clk(clk), .rst(rst));
             dff inti_hint[12](.clk(clk), .rst(rst));
             dff count_for_init[3](.clk(clk), .rst(rst));
+            dff showing_hint[1](.clk(clk), .rst(rst));
         }
     }
 
@@ -118,18 +119,19 @@ module mojo_top (
                 move.d = 42;
                 step.d = 0;
                 my_led.show_hint = 0;
+                showing_hint.d = 0;
                 if (my_keypad.move != 42) {
                     state.d = state.PLAY;
                 }
       
             state.PLAY:
-                led = move.q;
+                if (move.q != my_keypad.move){
+                    step.d = step.q + 1;
+                }
                 move.d = my_keypad.move;
-                step.d = clock.value;
                 game.d = my_updater.new_game;
                 hint.d = my_updater.new_hint;
-                if (move.q == 42) {led = 8b10000000;}
-                
+
                 // display all the stuff
                 pina = my_led.pina;
                 pinb = my_led.pinb;
@@ -146,20 +148,27 @@ module mojo_top (
         
                 // see if we want to show smile
                 if (my_keypad.show_smile == 1) {
-                    state.d = state.FIN;
+                    //state.d = state.FIN;
+                    if (showing_hint.q == 1) {
+                        my_led.show_hint = 0;
+                        showing_hint.d = 0;
+                    } else {
+                        my_led.show_hint = 1;
+                        showing_hint.d = 1;
+                    }
                 }
         
                 if (my_keypad.show_hint == 1) {
-                    if (my_led.showing_hint == 1) {
+                    if (showing_hint.q == 1) {
                         my_led.show_hint = 0;
+                        showing_hint.d = 0;
                     } else {
                         my_led.show_hint = 1;
+                        showing_hint.d = 1;
                     }
                 }
 
-                
             state.FIN:
-                led = my_keypad.move;
                 // waiting for restart
         
                 my_led.smile = 1 ;
@@ -171,13 +180,12 @@ module mojo_top (
                 if (my_keypad.restart_game == 1) {
                    state.d = state.INIT;
                 }
-        
         }
 
         pina = my_led.pina;
         pinb = my_led.pinb;
         
-        //led = c{my_led.xx, my_led.yy};
+        led = my_keypad.move;
     }
 
  

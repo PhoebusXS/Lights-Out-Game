@@ -7,8 +7,7 @@ module led_matrix_controller (
     input show_hint,
     input smile,
     output pina[12],
-    output pinb[12],
-    output showing_hint
+    output pinb[12]
 ) {
     led_matrix_frame my_frame;
     sig x[4]; // row number, 1 to 8
@@ -69,7 +68,6 @@ module led_matrix_controller (
     }
         pina = my_frame.pina;
         pinb = my_frame.pinb;
-        showing_hint = show_hint;
     }
 }
 
