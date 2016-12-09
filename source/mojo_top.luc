@@ -19,6 +19,15 @@ module mojo_top (
 
     .clk(clk) {
         reset_conditioner reset_cond;
+        edge_detector edge_detector_a(#RISE(1), #FALL(0)); // detect rising edges
+        edge_detector edge_detector_b(#RISE(1), #FALL(0)); // detect rising edges
+        edge_detector edge_detector_c(#RISE(1), #FALL(0)); // detect rising edges
+        edge_detector edge_detector_d(#RISE(1), #FALL(0)); // detect rising edges
+        button_conditioner button_cond_a;
+        button_conditioner button_cond_b;
+        button_conditioner button_cond_c;
+        button_conditioner button_cond_d;
+
         .rst(rst) {
             fsm state = {INIT, PLAY, FIN};
             counter ctr (#SIZE(6),#TOP(63),#DIV(12));
@@ -76,7 +85,15 @@ module mojo_top (
         pind = 0;
     
         // update my_keypad
-        my_keypad.pin = pinc;
+        button_cond_a.in = pinc[0];
+        button_cond_b.in = pinc[1];
+        button_cond_c.in = pinc[2];
+        button_cond_d.in = pinc[3];
+        edge_detector_a.in = button_cond_a.out;
+        edge_detector_b.in = button_cond_b.out;
+        edge_detector_c.in = button_cond_c.out;
+        edge_detector_d.in = button_cond_d.out;
+        my_keypad.pin = c{edge_detector_d.out, edge_detector_c.out, edge_detector_b.out, edge_detector_a.out};
         my_keypad.ind = ktr.value;
         pind = my_keypad.pinr;
 
