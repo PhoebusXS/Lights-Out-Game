@@ -72,15 +72,15 @@ WARNING:HDLCompiler:1127 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Li
 Synthesizing Unit <mojo_top_0>.
     Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v".
 INFO:Xst:3210 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" line 70: Output port <show_smile> of the instance <my_keypad> is unconnected or connected to loadless signal.
-    Found 2-bit register for signal <M_state_q>.
     Found 12-bit register for signal <M_init_game_q>.
     Found 8-bit register for signal <M_move_q>.
-    Found 1-bit register for signal <M_step_normalizer_q>.
     Found 12-bit register for signal <M_init_hint_q>.
-    Found 12-bit register for signal <M_hint_q>.
-    Found 1-bit register for signal <M_showing_hint_q>.
     Found 6-bit register for signal <M_step_q>.
     Found 12-bit register for signal <M_game_q>.
+    Found 2-bit register for signal <M_state_q>.
+    Found 12-bit register for signal <M_hint_q>.
+    Found 1-bit register for signal <M_showing_hint_q>.
+    Found 1-bit register for signal <M_step_normalizer_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 4                                              |

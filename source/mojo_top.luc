@@ -121,9 +121,9 @@ module mojo_top (
                 showing_hint.d = 0;
                 step_normalizer.d = 0;
 
-                if (my_keypad.move != 42) {
+                if (my_keypad.move != 42) {        
                     state.d = state.PLAY;
-                }
+                }                
 
             state.PLAY:
 

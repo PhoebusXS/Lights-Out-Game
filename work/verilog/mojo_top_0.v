@@ -297,18 +297,9 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_game_q <= 1'h0;
+      M_step_normalizer_q <= 1'h0;
     end else begin
-      M_game_q <= M_game_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
-    end else begin
-      M_state_q <= M_state_d;
+      M_step_normalizer_q <= M_step_normalizer_d;
     end
   end
   
@@ -333,18 +324,36 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_step_normalizer_q <= 1'h0;
+      M_init_hint_q <= 1'h0;
     end else begin
-      M_step_normalizer_q <= M_step_normalizer_d;
+      M_init_hint_q <= M_init_hint_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_init_hint_q <= 1'h0;
+      M_step_q <= 1'h0;
     end else begin
-      M_init_hint_q <= M_init_hint_d;
+      M_step_q <= M_step_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_game_q <= 1'h0;
+    end else begin
+      M_game_q <= M_game_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_state_q <= 1'h0;
+    end else begin
+      M_state_q <= M_state_d;
     end
   end
   
@@ -363,15 +372,6 @@ module mojo_top_0 (
       M_showing_hint_q <= 1'h0;
     end else begin
       M_showing_hint_q <= M_showing_hint_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_step_q <= 1'h0;
-    end else begin
-      M_step_q <= M_step_d;
     end
   end
   

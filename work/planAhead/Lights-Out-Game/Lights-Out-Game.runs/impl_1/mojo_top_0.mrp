@@ -8,7 +8,7 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sat Dec 10 17:02:44 2016
+Mapped Date    : Sat Dec 10 17:12:24 2016
 
 Design Summary
 --------------
@@ -39,7 +39,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   120 out of   1,430    8%
+  Number of occupied Slices:                   123 out of   1,430    8%
   Number of MUXCYs used:                       152 out of   2,860    5%
   Number of LUT Flip Flop pairs used:          348
     Number with an unused Flip Flop:           194 out of     348   55%
@@ -87,8 +87,8 @@ Specific Feature Utilization:
 Average Fanout of Non-Clock Nets:                4.12
 
 Peak Memory Usage:  418 MB
-Total REAL time to MAP completion:  9 secs 
-Total CPU time to MAP completion (all processors):   9 secs 
+Total REAL time to MAP completion:  12 secs 
+Total CPU time to MAP completion (all processors):   10 secs 
 
 Table of Contents
 -----------------
