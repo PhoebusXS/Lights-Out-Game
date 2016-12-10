@@ -8,23 +8,23 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sat Dec 10 02:58:39 2016
+Mapped Date    : Sat Dec 10 17:02:44 2016
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    1
+Number of warnings:    0
 Slice Logic Utilization:
   Number of Slice Registers:                   157 out of  11,440    1%
-    Number used as Flip Flops:                 156
-    Number used as Latches:                      1
+    Number used as Flip Flops:                 157
+    Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        356 out of   5,720    6%
-    Number used as logic:                      344 out of   5,720    6%
-      Number using O6 output only:             201
+  Number of Slice LUTs:                        347 out of   5,720    6%
+    Number used as logic:                      335 out of   5,720    5%
+      Number using O6 output only:             194
       Number using O5 output only:             111
-      Number using O5 and O6:                   32
+      Number using O5 and O6:                   30
       Number used as ROM:                        0
     Number used as Memory:                       4 out of   1,440    1%
       Number used as Dual Port RAM:              0
@@ -39,15 +39,15 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   118 out of   1,430    8%
+  Number of occupied Slices:                   120 out of   1,430    8%
   Number of MUXCYs used:                       152 out of   2,860    5%
-  Number of LUT Flip Flop pairs used:          356
-    Number with an unused Flip Flop:           202 out of     356   56%
-    Number with an unused LUT:                   0 out of     356    0%
-    Number of fully used LUT-FF pairs:         154 out of     356   43%
-    Number of unique control sets:              11
+  Number of LUT Flip Flop pairs used:          348
+    Number with an unused Flip Flop:           194 out of     348   55%
+    Number with an unused LUT:                   1 out of     348    1%
+    Number of fully used LUT-FF pairs:         153 out of     348   43%
+    Number of unique control sets:              10
     Number of slice register sites lost
-      to control set restrictions:              47 out of  11,440    1%
+      to control set restrictions:              39 out of  11,440    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -56,8 +56,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        34 out of     102   33%
-    Number of LOCed IOBs:                       34 out of      34  100%
+  Number of bonded IOBs:                        42 out of     102   41%
+    Number of LOCed IOBs:                       42 out of      42  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -84,11 +84,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.11
+Average Fanout of Non-Clock Nets:                4.12
 
 Peak Memory Usage:  418 MB
-Total REAL time to MAP completion:  7 secs 
-Total CPU time to MAP completion (all processors):   7 secs 
+Total REAL time to MAP completion:  9 secs 
+Total CPU time to MAP completion (all processors):   9 secs 
 
 Table of Contents
 -----------------
@@ -111,10 +111,6 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   M_state_q[1]_GND_16_o_Mux_58_o is sourced by a combinatorial pin. This is not
-   good design practice. Use the CE pin to control the loading of data into the
-   flip-flop.
 
 Section 3 - Informational
 -------------------------
@@ -135,7 +131,7 @@ INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-  30 block(s) optimized away
+  28 block(s) optimized away
 
 Section 5 - Removed Logic
 -------------------------
@@ -165,9 +161,7 @@ VCC 		ctr/VCC
 GND 		ktr/GND
 VCC 		ktr/VCC
 GND 		my_keypad/XST_GND
-VCC 		my_keypad/XST_VCC
 GND 		my_keypad/my_frame/XST_GND
-VCC 		my_keypad/my_frame/XST_VCC
 GND 		my_led/XST_GND
 GND 		my_led/my_frame/XST_GND
 GND 		my_updater/XST_GND
@@ -184,6 +178,14 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | clk                                | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| led[0]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led[1]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led[2]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led[3]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led[4]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led[5]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led[6]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led[7]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | pina[0]                            | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | pina[1]                            | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | pina[2]                            | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |

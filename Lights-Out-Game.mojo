@@ -4,8 +4,8 @@
     <src>keypad_controller.luc</src>
     <src>led_matrix_frame.luc</src>
     <src>board_updater.luc</src>
-    <src>keypad_frame.luc</src>
     <src>op_comparer.luc</src>
+    <src>keypad_frame.luc</src>
     <src>op_shifter.luc</src>
     <src>op_logic.luc</src>
     <src>led_matrix_controller.luc</src>
@@ -18,9 +18,9 @@
     <component>uart_rx.luc</component>
     <component>cclk_detector.luc</component>
     <component>reset_conditioner.luc</component>
-    <component>pipeline.luc</component>
-    <component>avr_interface.luc</component>
     <component>uart_tx.luc</component>
+    <component>avr_interface.luc</component>
+    <component>pipeline.luc</component>
     <component>button_conditioner.luc</component>
     <component>counter.luc</component>
     <component>edge_detector.luc</component>

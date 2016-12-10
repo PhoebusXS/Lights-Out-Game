@@ -10,7 +10,8 @@ module mojo_top_0 (
     output reg [11:0] pina,
     output reg [11:0] pinb,
     input [3:0] pinc,
-    output reg [3:0] pind
+    output reg [3:0] pind,
+    output reg [7:0] led
   );
   
   
@@ -177,6 +178,9 @@ module mojo_top_0 (
     M_step_d = M_step_q;
     M_move_d = M_move_q;
     
+    led[0+0-:1] = M_my_keypad_show_hint;
+    led[1+0-:1] = M_showing_hint_q;
+    led[2+5-:6] = M_my_keypad_move[0+5-:6];
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     game_possibilties[0+11-:12] = 12'h4fe;
@@ -185,8 +189,8 @@ module mojo_top_0 (
     hint_possibilties[0+11-:12] = 12'h9be;
     hint_possibilties[12+11-:12] = 12'h653;
     hint_possibilties[24+11-:12] = 12'hb2e;
-    M_init_game_d = game_possibilties[0+11-:12];
-    M_init_hint_d = hint_possibilties[0+11-:12];
+    M_init_game_d = 12'h4fe;
+    M_init_hint_d = 12'h9be;
     mask[0+11-:12] = 12'hc80;
     mask[12+11-:12] = 12'he40;
     mask[24+11-:12] = 12'h720;
@@ -227,28 +231,12 @@ module mojo_top_0 (
     M_my_led_ind = M_ctr_value;
     M_my_led_smile = 1'h0;
     M_my_led_sad = 1'h0;
+    M_my_led_show_hint = M_showing_hint_q;
     
     case (M_state_q)
       INIT_state: begin
-        
-        case (M_init_game_q[0+1-:2])
-          1'h1: begin
-            M_game_d = game_possibilties[12+11-:12];
-            M_hint_d = hint_possibilties[12+11-:12];
-          end
-          4'ha: begin
-            M_game_d = game_possibilties[24+11-:12];
-            M_hint_d = hint_possibilties[24+11-:12];
-          end
-          4'hb: begin
-            M_game_d = game_possibilties[0+11-:12];
-            M_hint_d = hint_possibilties[0+11-:12];
-          end
-          default: begin
-            M_game_d = game_possibilties[0+11-:12];
-            M_hint_d = hint_possibilties[0+11-:12];
-          end
-        endcase
+        M_game_d = M_init_game_q;
+        M_hint_d = M_init_hint_q;
         M_move_d = 6'h2a;
         M_step_d = 1'h0;
         M_my_led_show_hint = 1'h0;
@@ -309,15 +297,6 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_move_q <= 1'h0;
-    end else begin
-      M_move_q <= M_move_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
       M_game_q <= 1'h0;
     end else begin
       M_game_q <= M_game_d;
@@ -327,18 +306,9 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_hint_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_hint_q <= M_hint_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_step_normalizer_q <= 1'h0;
-    end else begin
-      M_step_normalizer_q <= M_step_normalizer_d;
+      M_state_q <= M_state_d;
     end
   end
   
@@ -354,9 +324,36 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_move_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_move_q <= M_move_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_step_normalizer_q <= 1'h0;
+    end else begin
+      M_step_normalizer_q <= M_step_normalizer_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_init_hint_q <= 1'h0;
+    end else begin
+      M_init_hint_q <= M_init_hint_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_hint_q <= 1'h0;
+    end else begin
+      M_hint_q <= M_hint_d;
     end
   end
   
@@ -375,15 +372,6 @@ module mojo_top_0 (
       M_step_q <= 1'h0;
     end else begin
       M_step_q <= M_step_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_init_hint_q <= 1'h0;
-    end else begin
-      M_init_hint_q <= M_init_hint_d;
     end
   end
   

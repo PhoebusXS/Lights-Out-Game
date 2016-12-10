@@ -4,7 +4,8 @@ module mojo_top (
     output pina[12], // for led matrix
     output pinb[12], // for led matrix
     input pinc[4], // for keypad, 4 pins on the left
-    output pind[4] // for keypad, 4 pins on the right
+    output pind[4], // for keypad, 4 pins on the right
+    output led[8]
 ) {
     sig mask[12][12];
     sig rst;
@@ -42,7 +43,11 @@ module mojo_top (
     }
 
     always {
-
+        led[0] = my_keypad.show_hint;
+    
+        led[1] = showing_hint.q;
+        led[7:2] = my_keypad.move[5:0];
+    
         reset_cond.in = ~rst_n; // input raw inverted reset signal
         rst = reset_cond.out;   // conditioned reset
  
@@ -55,8 +60,8 @@ module mojo_top (
         hint_possibilties[1] = 12b011001010011;
         hint_possibilties[2] = 12b101100101110;
 
-        init_game.d = game_possibilties[0];
-        init_hint.d = hint_possibilties[0];
+        init_game.d = 12b010011111110;
+        init_hint.d = 12b100110111110;
 
         mask[0] = 12b110010000000;
         mask[1] = 12b111001000000;
@@ -103,24 +108,13 @@ module mojo_top (
         my_led.ind = ctr.value;
         my_led.smile = 0;
         my_led.sad = 0;
+        my_led.show_hint = showing_hint.q;
 
         case (state.q) {
 
             state.INIT:
-                case (init_game.q[1:0]) {
-                    01:
-                    	    game.d = game_possibilties[1];
-                    	    hint.d = hint_possibilties[1];
-                    10:
-                    	    game.d = game_possibilties[2];
-                        	hint.d = hint_possibilties[2];
-                    11:
-                        	game.d = game_possibilties[0];
-                        	hint.d = hint_possibilties[0];
-                    default:
-                        	game.d = game_possibilties[0];
-                        	hint.d = hint_possibilties[0];
-                }
+                game.d = init_game.q;
+                hint.d = init_hint.q;
                 move.d = 42;
                 step.d = 0;
                 my_led.show_hint = 0;
@@ -134,7 +128,7 @@ module mojo_top (
             state.PLAY:
 
                 // incrementing step number
-                if (move.q != my_keypad.move){
+                if (move.q != my_keypad.move) {
                     step_normalizer.d = step_normalizer.q + 1;
                     if (step_normalizer.q - step_normalizer.q / 2 * 2 == 1) {
                         step.d = step.q + 1;
@@ -177,7 +171,6 @@ module mojo_top (
                 }
 
             state.FIN:
-
                 // display smile face
                 my_led.smile = 1 ;
 
