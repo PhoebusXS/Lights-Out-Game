@@ -63,7 +63,6 @@ Elaborating module <pipeline_17>.
 Elaborating module <counter_13>.
 
 Elaborating module <counter_14>.
-WARNING:HDLCompiler:1127 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 170: Assignment to game_possibilties ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -72,15 +71,14 @@ WARNING:HDLCompiler:1127 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Li
 Synthesizing Unit <mojo_top_0>.
     Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v".
 INFO:Xst:3210 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/mojo_top_0.v" line 70: Output port <show_smile> of the instance <my_keypad> is unconnected or connected to loadless signal.
-    Found 12-bit register for signal <M_init_game_q>.
-    Found 8-bit register for signal <M_move_q>.
-    Found 12-bit register for signal <M_init_hint_q>.
     Found 6-bit register for signal <M_step_q>.
-    Found 12-bit register for signal <M_game_q>.
     Found 2-bit register for signal <M_state_q>.
-    Found 12-bit register for signal <M_hint_q>.
-    Found 1-bit register for signal <M_showing_hint_q>.
     Found 1-bit register for signal <M_step_normalizer_q>.
+    Found 12-bit register for signal <M_hint_q>.
+    Found 12-bit register for signal <M_game_q>.
+    Found 8-bit register for signal <M_move_q>.
+    Found 1-bit register for signal <M_showing_hint_q>.
+    Found 3-bit register for signal <M_count_for_init_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
@@ -95,17 +93,26 @@ INFO:Xst:3210 - "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Ga
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 1-bit adder for signal <M_step_normalizer_q_PWR_1_o_add_3_OUT<0>> created at line 251.
-    Found 6-bit adder for signal <M_step_q[5]_GND_1_o_add_6_OUT> created at line 253.
-    Found 6-bit adder for signal <M_step_q[5]_GND_1_o_add_17_OUT> created at line 274.
-    Found 1-bit 3-to-1 multiplexer for signal <M_my_led_show_hint> created at line 236.
-    Found 8-bit comparator equal for signal <n0002> created at line 250
-    Found 6-bit comparator greater for signal <PWR_1_o_M_step_q[5]_LessThan_12_o> created at line 264
+    Found 3-bit subtractor for signal <M_count_for_init_q[2]_M_count_for_init_q[2]_sub_38_OUT> created at line 294.
+    Found 7-bit adder for signal <M_count_for_init_q[2]_GND_1_o_add_4_OUT> created at line 243.
+    Found 1-bit adder for signal <M_step_normalizer_q_PWR_1_o_add_9_OUT<0>> created at line 255.
+    Found 6-bit adder for signal <M_step_q[5]_GND_1_o_add_12_OUT> created at line 257.
+    Found 6-bit adder for signal <M_step_q[5]_GND_1_o_add_23_OUT> created at line 279.
+    Found 3-bit adder for signal <M_count_for_init_q[2]_GND_1_o_add_33_OUT> created at line 294.
+    Found 167-bit shifter logical right for signal <n0115> created at line 242
+    Found 3x4-bit multiplier for signal <n0145> created at line 243.
+    Found 167-bit shifter logical right for signal <n0118> created at line 243
+    Found 3x3-bit multiplier for signal <n0133> created at line 294.
+    Found 1-bit 3-to-1 multiplexer for signal <M_my_led_show_hint> created at line 240.
+    Found 8-bit comparator equal for signal <n0006> created at line 254
+    Found 6-bit comparator greater for signal <PWR_1_o_M_step_q[5]_LessThan_18_o> created at line 268
     Summary:
-	inferred   3 Adder/Subtractor(s).
-	inferred  64 D-type flip-flop(s).
+	inferred   2 Multiplier(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred  43 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred   9 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
 
@@ -233,12 +240,27 @@ Unit <counter_13> synthesized.
 
 Synthesizing Unit <counter_14>.
     Related source file is "F:/term5/50.002/1D/Lights-Out-Game/work/planAhead/Lights-Out-Game/Lights-Out-Game.srcs/sources_1/imports/verilog/counter_14.v".
-    Found 25-bit register for signal <M_ctr_q>.
-    Found 25-bit adder for signal <M_ctr_d> created at line 35.
+    Found 24-bit register for signal <M_ctr_q>.
+    Found 24-bit adder for signal <M_ctr_d> created at line 35.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  25 D-type flip-flop(s).
+	inferred  24 D-type flip-flop(s).
 Unit <counter_14> synthesized.
+
+Synthesizing Unit <div_3u_3u>.
+    Related source file is "".
+    Found 6-bit adder for signal <GND_17_o_b[2]_add_1_OUT> created at line 0.
+    Found 5-bit adder for signal <GND_17_o_b[2]_add_3_OUT> created at line 0.
+    Found 4-bit adder for signal <GND_17_o_b[2]_add_5_OUT> created at line 0.
+    Found 6-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 5-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 4-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 3-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+	inferred   7 Multiplexer(s).
+Unit <div_3u_3u> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -246,51 +268,61 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  4x4-bit single-port Read Only RAM                     : 1
-# Multipliers                                          : 5
+# Multipliers                                          : 7
+ 3x3-bit multiplier                                    : 1
  4x2-bit multiplier                                    : 2
+ 4x3-bit multiplier                                    : 1
  5x2-bit multiplier                                    : 2
  8x4-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 33
+# Adders/Subtractors                                   : 39
  1-bit adder                                           : 1
  12-bit adder                                          : 1
  18-bit adder                                          : 1
  20-bit adder                                          : 4
- 25-bit adder                                          : 1
+ 24-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 3-bit subtractor                                      : 1
  32-bit adder                                          : 3
- 4-bit adder                                           : 1
+ 4-bit adder                                           : 2
  4-bit subtractor                                      : 8
- 5-bit adder                                           : 2
+ 5-bit adder                                           : 3
  5-bit subtractor                                      : 3
- 6-bit adder                                           : 3
+ 6-bit adder                                           : 4
  6-bit subtractor                                      : 2
- 7-bit adder                                           : 2
+ 7-bit adder                                           : 3
  8-bit adder                                           : 1
-# Registers                                            : 23
+# Registers                                            : 22
  1-bit register                                        : 6
- 12-bit register                                       : 4
+ 12-bit register                                       : 2
  18-bit register                                       : 1
  2-bit register                                        : 4
  20-bit register                                       : 4
- 25-bit register                                       : 1
+ 24-bit register                                       : 1
+ 3-bit register                                        : 1
  4-bit register                                        : 1
  6-bit register                                        : 1
  8-bit register                                        : 1
-# Comparators                                          : 6
- 4-bit comparator lessequal                            : 2
+# Comparators                                          : 10
+ 3-bit comparator lessequal                            : 1
+ 4-bit comparator lessequal                            : 3
+ 5-bit comparator lessequal                            : 1
  6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 1
  7-bit comparator lessequal                            : 1
  8-bit comparator equal                                : 1
  8-bit comparator lessequal                            : 1
-# Multiplexers                                         : 77
- 1-bit 2-to-1 multiplexer                              : 37
+# Multiplexers                                         : 84
+ 1-bit 2-to-1 multiplexer                              : 43
  1-bit 3-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 12
  18-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 1
  4-bit 2-to-1 multiplexer                              : 20
  6-bit 2-to-1 multiplexer                              : 3
  8-bit 2-to-1 multiplexer                              : 3
-# Logic shifters                                       : 5
+# Logic shifters                                       : 7
  127-bit shifter logical right                         : 2
+ 167-bit shifter logical right                         : 2
  23-bit shifter logical right                          : 2
  287-bit shifter logical right                         : 1
 # FSMs                                                 : 1
@@ -341,6 +373,9 @@ Unit <led_matrix_frame_15> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mojo_top_0>.
 The following registers are absorbed into counter <M_step_normalizer_q>: 1 register on signal <M_step_normalizer_q>.
+	Multiplier <Mmult_n0145> in block <mojo_top_0> and adder/subtractor <Madd_M_count_for_init_q[2]_GND_1_o_add_4_OUT> in block <mojo_top_0> are combined into a MAC<Maddsub_n0145>.
+	Multiplier <Mmult_n0133> in block <mojo_top_0> and adder/subtractor <Msub_M_count_for_init_q[2]_M_count_for_init_q[2]_sub_38_OUT> in block <mojo_top_0> are combined into a MAC<Maddsub_n0133>.
+	The following registers are also absorbed by the MAC: <M_count_for_init_q> in block <mojo_top_0>.
 Unit <mojo_top_0> synthesized (advanced).
 
 =========================================================================
@@ -349,12 +384,15 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  4x4-bit single-port distributed Read Only RAM         : 1
-# MACs                                                 : 3
+# MACs                                                 : 5
  2x5-to-7-bit Mult with pre-adder                      : 2
+ 3x2-to-3-bit MAC                                      : 1
+ 4x3-to-7-bit MAC                                      : 1
  8x4-to-8-bit MAC                                      : 1
 # Multipliers                                          : 2
  4x2-bit multiplier                                    : 2
-# Adders/Subtractors                                   : 22
+# Adders/Subtractors                                   : 26
+ 3-bit adder                                           : 4
  3-bit subtractor                                      : 1
  4-bit adder                                           : 5
  4-bit subtractor                                      : 9
@@ -367,24 +405,29 @@ Macro Statistics
  1-bit up counter                                      : 1
  18-bit up counter                                     : 1
  20-bit up counter                                     : 4
- 25-bit up counter                                     : 1
-# Registers                                            : 79
- Flip-Flops                                            : 79
-# Comparators                                          : 6
- 4-bit comparator lessequal                            : 2
+ 24-bit up counter                                     : 1
+# Registers                                            : 55
+ Flip-Flops                                            : 55
+# Comparators                                          : 10
+ 3-bit comparator lessequal                            : 1
+ 4-bit comparator lessequal                            : 3
+ 5-bit comparator lessequal                            : 1
  6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 1
  7-bit comparator lessequal                            : 1
  8-bit comparator equal                                : 1
  8-bit comparator lessequal                            : 1
-# Multiplexers                                         : 75
- 1-bit 2-to-1 multiplexer                              : 36
+# Multiplexers                                         : 82
+ 1-bit 2-to-1 multiplexer                              : 42
  1-bit 3-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 12
+ 3-bit 2-to-1 multiplexer                              : 1
  4-bit 2-to-1 multiplexer                              : 20
  6-bit 2-to-1 multiplexer                              : 3
  8-bit 2-to-1 multiplexer                              : 3
-# Logic shifters                                       : 5
+# Logic shifters                                       : 7
  127-bit shifter logical right                         : 2
+ 167-bit shifter logical right                         : 2
  23-bit shifter logical right                          : 2
  287-bit shifter logical right                         : 1
 # FSMs                                                 : 1
@@ -396,15 +439,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <M_init_game_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_init_game_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_init_game_q_9> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_init_game_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_init_hint_q_0> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_init_hint_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_init_hint_q_9> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_init_hint_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <M_init_game_q_1> in Unit <mojo_top_0> is equivalent to the following 15 FFs/Latches, which will be removed : <M_init_game_q_2> <M_init_game_q_3> <M_init_game_q_4> <M_init_game_q_5> <M_init_game_q_6> <M_init_game_q_7> <M_init_game_q_10> <M_init_hint_q_1> <M_init_hint_q_2> <M_init_hint_q_3> <M_init_hint_q_4> <M_init_hint_q_5> <M_init_hint_q_7> <M_init_hint_q_8> <M_init_hint_q_11> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_0> on signal <M_state_q[1:2]> with user encoding.
 -------------------
@@ -451,7 +485,7 @@ INFO:Xst:2261 - The FF/Latch <ctr/M_ctr_q_9> in Unit <mojo_top_0> is equivalent 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 8.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 9.
 
 Final Macro Processing ...
 
@@ -467,8 +501,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 153
- Flip-Flops                                            : 153
+# Registers                                            : 151
+ Flip-Flops                                            : 151
 # Shift Registers                                      : 4
  2-bit shift register                                  : 4
 
@@ -491,11 +525,13 @@ Partition Implementation Status
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 161   |
------------------------------------+------------------------+-------+
+-----------------------------------+-----------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                               | Load  |
+-----------------------------------+-----------------------------------------------------+-------+
+clk                                | BUFGP                                               | 160   |
+M_move_q<4>                        | NONE(Madd_M_count_for_init_q[2]_GND_1_o_add_33_OUT1)| 1     |
+-----------------------------------+-----------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -505,9 +541,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 8.259ns (Maximum Frequency: 121.080MHz)
+   Minimum period: 11.028ns (Maximum Frequency: 90.680MHz)
    Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 19.382ns
+   Maximum output required time after clock: 20.279ns
    Maximum combinational path delay: No path found
 
 =========================================================================

@@ -9,8 +9,8 @@ module mojo_top (
 ) {
     sig mask[12][12];
     sig rst;
-    sig game_possibilties[3][12];
-    sig hint_possibilties[3][12];
+    sig game_possibilties[7][12];
+    sig hint_possibilties[7][12];
 
     board_updater my_updater;
     led_matrix_controller my_led;
@@ -30,15 +30,14 @@ module mojo_top (
         .rst(rst) {
             fsm state = {INIT, PLAY, FIN, LOSE};
             counter ctr (#SIZE(6),#TOP(63),#DIV(12));
-            counter ktr (#SIZE(2), #DIV(23));
+            counter ktr (#SIZE(2), #DIV(22));
             dff game[12](.clk(clk), .rst(rst));
             dff hint[12](.clk(clk), .rst(rst));
             dff move[8](.clk(clk), .rst(rst));
             dff step[6](.clk(clk), .rst(rst));
-            dff init_game[12](.clk(clk), .rst(rst));
-            dff init_hint[12](.clk(clk), .rst(rst));
             dff showing_hint[1](.clk(clk), .rst(rst));
             dff step_normalizer(.clk(clk), .rst(rst));
+            dff count_for_init[3](.clk(clk), .rst(rst));
         }
     }
 
@@ -55,13 +54,18 @@ module mojo_top (
         game_possibilties[0] = 12b010011111110;
         game_possibilties[1] = 12b110010000001;
         game_possibilties[2] = 12b101000100111;
+        game_possibilties[3] = 12b111111110011;
+        game_possibilties[4] = 12b100010100111;
+        game_possibilties[5] = 12b100101101001;
+        game_possibilties[6] = 12b010010001110;
  
         hint_possibilties[0] = 12b100110111110;
         hint_possibilties[1] = 12b011001010011;
         hint_possibilties[2] = 12b101100101110;
-
-        init_game.d = 12b010011111110;
-        init_hint.d = 12b100110111110;
+        hint_possibilties[3] = 12b010100101101;
+        hint_possibilties[4] = 12b011000011111;
+        hint_possibilties[5] = 12b111111111111;
+        hint_possibilties[6] = 12b010110010010;
 
         mask[0] = 12b110010000000;
         mask[1] = 12b111001000000;
@@ -113,8 +117,8 @@ module mojo_top (
         case (state.q) {
 
             state.INIT:
-                game.d = init_game.q;
-                hint.d = init_hint.q;
+                game.d = game_possibilties[count_for_init.q];
+                hint.d = hint_possibilties[count_for_init.q];
                 move.d = 42;
                 step.d = 0;
                 my_led.show_hint = 0;
@@ -155,7 +159,7 @@ module mojo_top (
 
                 // see if player gave up
                 if (my_keypad.restart_game == 1) {
-                    state.d = state.INIT;
+                    state.d = state.LOSE;
                 }
 
                 // see if player wants hint
@@ -163,27 +167,37 @@ module mojo_top (
                     if (showing_hint.q == 1) {
                         my_led.show_hint = 0;
                         showing_hint.d = 0;
-                        step.d = step.q + 4;
                     } else {
+                        step.d = step.q + 4;
                         my_led.show_hint = 1;
                         showing_hint.d = 1;
                     }
                 }
 
             state.FIN:
+      
+                // choosing next game
+                count_for_init.d = (count_for_init.q + 1) - (count_for_init.q + 1) / 7 * 7;
+          
                 // display smile face
                 my_led.smile = 1 ;
 
+                 
                 // waiting for restart
                 if (my_keypad.move != 42) {
                    state.d = state.INIT;
                 }
 
+        
+        
             state.LOSE:
 
                 // display sad face
                 my_led.sad = 1 ;
 
+                // choosing next game
+                count_for_init.d = (count_for_init.q + 1) - (count_for_init.q + 1) / 7 * 7;
+        
                 // waiting for restart
                 if (my_keypad.move != 42) {
                    state.d = state.INIT;

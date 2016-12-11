@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Dec 10 17:12:36 2016
+// Written by: Map P.20131013 on Mon Dec 12 01:58:11 2016
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -10,24 +10,24 @@ COMP "pina[0]" LOCATE = SITE "P58" LEVEL 1;
 COMP "pina[1]" LOCATE = SITE "P67" LEVEL 1;
 COMP "pina[2]" LOCATE = SITE "P75" LEVEL 1;
 COMP "pina[3]" LOCATE = SITE "P79" LEVEL 1;
-COMP "pinb[0]" LOCATE = SITE "P57" LEVEL 1;
 COMP "pina[4]" LOCATE = SITE "P81" LEVEL 1;
-COMP "pinb[1]" LOCATE = SITE "P66" LEVEL 1;
+COMP "pinb[0]" LOCATE = SITE "P57" LEVEL 1;
 COMP "pina[5]" LOCATE = SITE "P83" LEVEL 1;
-COMP "pinb[2]" LOCATE = SITE "P74" LEVEL 1;
+COMP "pinb[1]" LOCATE = SITE "P66" LEVEL 1;
 COMP "pina[6]" LOCATE = SITE "P85" LEVEL 1;
-COMP "pinb[3]" LOCATE = SITE "P78" LEVEL 1;
+COMP "pinb[2]" LOCATE = SITE "P74" LEVEL 1;
 COMP "pina[7]" LOCATE = SITE "P88" LEVEL 1;
-COMP "pinb[4]" LOCATE = SITE "P80" LEVEL 1;
+COMP "pinb[3]" LOCATE = SITE "P78" LEVEL 1;
 COMP "pina[8]" LOCATE = SITE "P93" LEVEL 1;
 COMP "pinc[0]" LOCATE = SITE "P115" LEVEL 1;
-COMP "pinb[5]" LOCATE = SITE "P82" LEVEL 1;
+COMP "pinb[4]" LOCATE = SITE "P80" LEVEL 1;
 COMP "pina[9]" LOCATE = SITE "P95" LEVEL 1;
 COMP "pinc[1]" LOCATE = SITE "P117" LEVEL 1;
-COMP "pinb[6]" LOCATE = SITE "P84" LEVEL 1;
+COMP "pinb[5]" LOCATE = SITE "P82" LEVEL 1;
 COMP "pinc[2]" LOCATE = SITE "P119" LEVEL 1;
-COMP "pinb[7]" LOCATE = SITE "P87" LEVEL 1;
+COMP "pinb[6]" LOCATE = SITE "P84" LEVEL 1;
 COMP "pinc[3]" LOCATE = SITE "P121" LEVEL 1;
+COMP "pinb[7]" LOCATE = SITE "P87" LEVEL 1;
 COMP "pind[0]" LOCATE = SITE "P114" LEVEL 1;
 COMP "pinb[8]" LOCATE = SITE "P92" LEVEL 1;
 COMP "pind[1]" LOCATE = SITE "P116" LEVEL 1;
@@ -46,28 +46,30 @@ COMP "pina[10]" LOCATE = SITE "P98" LEVEL 1;
 COMP "pina[11]" LOCATE = SITE "P100" LEVEL 1;
 COMP "pinb[10]" LOCATE = SITE "P97" LEVEL 1;
 COMP "pinb[11]" LOCATE = SITE "P99" LEVEL 1;
-TIMEGRP clk = BEL "M_init_game_q_1" BEL "M_step_q_0" BEL "M_step_q_1" BEL
-        "M_step_q_2" BEL "M_step_q_3" BEL "M_step_q_4" BEL "M_step_q_5" BEL
+PIN Maddsub_n0133_pins<92> = BEL "Maddsub_n0133" PINNAME CLK;
+TIMEGRP clk = BEL "M_step_q_0" BEL "M_step_q_1" BEL "M_step_q_2" BEL
+        "M_step_q_3" BEL "M_step_q_4" BEL "M_step_q_5" BEL
         "M_showing_hint_q_0" BEL "M_move_q_0" BEL "M_move_q_1" BEL
-        "M_move_q_2" BEL "M_move_q_3" BEL "M_move_q_5" BEL "M_hint_q_0" BEL
-        "M_hint_q_1" BEL "M_hint_q_2" BEL "M_hint_q_3" BEL "M_hint_q_4" BEL
-        "M_hint_q_5" BEL "M_hint_q_6" BEL "M_hint_q_7" BEL "M_hint_q_8" BEL
-        "M_hint_q_9" BEL "M_hint_q_10" BEL "M_hint_q_11" BEL "M_game_q_0" BEL
+        "M_move_q_2" BEL "M_move_q_3" BEL "M_move_q_5" BEL "M_game_q_0" BEL
         "M_game_q_1" BEL "M_game_q_2" BEL "M_game_q_3" BEL "M_game_q_4" BEL
         "M_game_q_5" BEL "M_game_q_6" BEL "M_game_q_7" BEL "M_game_q_8" BEL
-        "M_game_q_9" BEL "M_game_q_10" BEL "M_game_q_11" BEL
-        "M_state_q_FSM_FFd2" BEL "M_state_q_FSM_FFd1" BEL
-        "M_step_normalizer_q" BEL "button_cond_d/M_ctr_q_0" BEL
-        "button_cond_d/M_ctr_q_1" BEL "button_cond_d/M_ctr_q_2" BEL
-        "button_cond_d/M_ctr_q_3" BEL "button_cond_d/M_ctr_q_4" BEL
-        "button_cond_d/M_ctr_q_5" BEL "button_cond_d/M_ctr_q_6" BEL
-        "button_cond_d/M_ctr_q_7" BEL "button_cond_d/M_ctr_q_8" BEL
-        "button_cond_d/M_ctr_q_9" BEL "button_cond_d/M_ctr_q_10" BEL
-        "button_cond_d/M_ctr_q_11" BEL "button_cond_d/M_ctr_q_12" BEL
-        "button_cond_d/M_ctr_q_13" BEL "button_cond_d/M_ctr_q_14" BEL
-        "button_cond_d/M_ctr_q_15" BEL "button_cond_d/M_ctr_q_16" BEL
-        "button_cond_d/M_ctr_q_17" BEL "button_cond_d/M_ctr_q_18" BEL
-        "button_cond_d/M_ctr_q_19" BEL "button_cond_d/sync/M_pipe_q_1" BEL
+        "M_game_q_9" BEL "M_game_q_10" BEL "M_game_q_11" BEL "M_hint_q_0" BEL
+        "M_hint_q_1" BEL "M_hint_q_2" BEL "M_hint_q_3" BEL "M_hint_q_4" BEL
+        "M_hint_q_5" BEL "M_hint_q_6" BEL "M_hint_q_7" BEL "M_hint_q_8" BEL
+        "M_hint_q_9" BEL "M_hint_q_10" BEL "M_hint_q_11" PIN
+        "Maddsub_n0133_pins<92>" BEL "M_state_q_FSM_FFd2" BEL
+        "M_state_q_FSM_FFd1" BEL "M_step_normalizer_q" BEL
+        "button_cond_d/M_ctr_q_0" BEL "button_cond_d/M_ctr_q_1" BEL
+        "button_cond_d/M_ctr_q_2" BEL "button_cond_d/M_ctr_q_3" BEL
+        "button_cond_d/M_ctr_q_4" BEL "button_cond_d/M_ctr_q_5" BEL
+        "button_cond_d/M_ctr_q_6" BEL "button_cond_d/M_ctr_q_7" BEL
+        "button_cond_d/M_ctr_q_8" BEL "button_cond_d/M_ctr_q_9" BEL
+        "button_cond_d/M_ctr_q_10" BEL "button_cond_d/M_ctr_q_11" BEL
+        "button_cond_d/M_ctr_q_12" BEL "button_cond_d/M_ctr_q_13" BEL
+        "button_cond_d/M_ctr_q_14" BEL "button_cond_d/M_ctr_q_15" BEL
+        "button_cond_d/M_ctr_q_16" BEL "button_cond_d/M_ctr_q_17" BEL
+        "button_cond_d/M_ctr_q_18" BEL "button_cond_d/M_ctr_q_19" BEL
+        "button_cond_d/sync/M_pipe_q_1" BEL
         "button_cond_d/sync/Mshreg_M_pipe_q_1" BEL "clk_BUFGP/BUFG" BEL
         "ctr/M_ctr_q_0" BEL "ctr/M_ctr_q_1" BEL "ctr/M_ctr_q_2" BEL
         "ctr/M_ctr_q_3" BEL "ctr/M_ctr_q_4" BEL "ctr/M_ctr_q_5" BEL
@@ -79,19 +81,19 @@ TIMEGRP clk = BEL "M_init_game_q_1" BEL "M_step_q_0" BEL "M_step_q_1" BEL
         "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0" BEL
         "ktr/M_ctr_q_18" BEL "ktr/M_ctr_q_19" BEL "ktr/M_ctr_q_20" BEL
         "ktr/M_ctr_q_21" BEL "ktr/M_ctr_q_22" BEL "ktr/M_ctr_q_23" BEL
-        "ktr/M_ctr_q_24" BEL "edge_detector_a/M_last_q" BEL
-        "edge_detector_b/M_last_q" BEL "edge_detector_c/M_last_q" BEL
-        "edge_detector_d/M_last_q" BEL "button_cond_a/M_ctr_q_0" BEL
-        "button_cond_a/M_ctr_q_1" BEL "button_cond_a/M_ctr_q_2" BEL
-        "button_cond_a/M_ctr_q_3" BEL "button_cond_a/M_ctr_q_4" BEL
-        "button_cond_a/M_ctr_q_5" BEL "button_cond_a/M_ctr_q_6" BEL
-        "button_cond_a/M_ctr_q_7" BEL "button_cond_a/M_ctr_q_8" BEL
-        "button_cond_a/M_ctr_q_9" BEL "button_cond_a/M_ctr_q_10" BEL
-        "button_cond_a/M_ctr_q_11" BEL "button_cond_a/M_ctr_q_12" BEL
-        "button_cond_a/M_ctr_q_13" BEL "button_cond_a/M_ctr_q_14" BEL
-        "button_cond_a/M_ctr_q_15" BEL "button_cond_a/M_ctr_q_16" BEL
-        "button_cond_a/M_ctr_q_17" BEL "button_cond_a/M_ctr_q_18" BEL
-        "button_cond_a/M_ctr_q_19" BEL "button_cond_a/sync/M_pipe_q_1" BEL
+        "edge_detector_a/M_last_q" BEL "edge_detector_b/M_last_q" BEL
+        "edge_detector_c/M_last_q" BEL "edge_detector_d/M_last_q" BEL
+        "button_cond_a/M_ctr_q_0" BEL "button_cond_a/M_ctr_q_1" BEL
+        "button_cond_a/M_ctr_q_2" BEL "button_cond_a/M_ctr_q_3" BEL
+        "button_cond_a/M_ctr_q_4" BEL "button_cond_a/M_ctr_q_5" BEL
+        "button_cond_a/M_ctr_q_6" BEL "button_cond_a/M_ctr_q_7" BEL
+        "button_cond_a/M_ctr_q_8" BEL "button_cond_a/M_ctr_q_9" BEL
+        "button_cond_a/M_ctr_q_10" BEL "button_cond_a/M_ctr_q_11" BEL
+        "button_cond_a/M_ctr_q_12" BEL "button_cond_a/M_ctr_q_13" BEL
+        "button_cond_a/M_ctr_q_14" BEL "button_cond_a/M_ctr_q_15" BEL
+        "button_cond_a/M_ctr_q_16" BEL "button_cond_a/M_ctr_q_17" BEL
+        "button_cond_a/M_ctr_q_18" BEL "button_cond_a/M_ctr_q_19" BEL
+        "button_cond_a/sync/M_pipe_q_1" BEL
         "button_cond_a/sync/Mshreg_M_pipe_q_1" BEL "button_cond_b/M_ctr_q_0"
         BEL "button_cond_b/M_ctr_q_1" BEL "button_cond_b/M_ctr_q_2" BEL
         "button_cond_b/M_ctr_q_3" BEL "button_cond_b/M_ctr_q_4" BEL
